@@ -111,24 +111,51 @@
             text-align: center;
             color: var(--muted);
             font-size: 12px;
-        } /* HERO IMAGE ON RIGHT SIDE */
-.hero-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-}
+        }
 
-.hero-text {
-    flex: 1;
-}
+        .hero-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
 
-.hero-image {
-    max-width: 260px;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-}
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            max-width: 260px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .footer-banner {
+            margin-top: 80px;
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer-banner-img {
+            max-width: 420px;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto 16px;
+        }
+
+        .footer-banner-text {
+            max-width: 520px;
+            margin: 0 auto;
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
     </style>
 </head>
 
@@ -167,6 +194,7 @@
     <img src="images/rizzio-banner.jpg" class="hero-image" alt="Rizzio Banner">
 
 </div>
+
     <div class="section">
         <div class="section-title">Core Pillars</div>
 
@@ -225,9 +253,28 @@
 
 </div>
 
-<footer>
-    © 2025 Rizzio — Catalogic Universe
-</footer>
+<!-- UPDATED FOOTER BANNER WITH ANTHOLOGY ONLY -->
+<div class="footer-banner">
+    <img src="images/rizzio-banner.jpg" alt="Rizzio Footer Banner" class="footer-banner-img">
 
-</body>
-</html>
+    <div style="
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: -22px;
+        line-height: 1.1;
+        transform: translateX(15px); /* half again to the right */
+    ">
+        ANTHOLOGY
+    </div>
+
+    <p class="footer-banner-text" style="font-family: 'Orbitron', sans-serif;">
+        The RIZZIO logo crowns the Anthology as its cosmic sigil. Sir Rizz stands in full mythic form —
+        blue skin, pink beard, platform shoes, and a weapon charged with funk energy. His command,
+        “Don’t Look — BUY!”, isn’t advertising. It’s doctrine. This is the gateway to the Trilogy:
+        bold, surreal, and unmistakably Rizzio.
+    </p>
+</div>
