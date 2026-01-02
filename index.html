@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizzio — Official Site</title>
+
+    <style>
+        :root {
+            --bg: #050508;
+            --fg: #f5f5f5;
+            --accent: #e63946;
+            --muted: #999;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #151520 0, #050508 45%, #000 100%);
+            color: var(--fg);
+        }
+
+        header {
+            padding: 28px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(14px);
+            background: rgba(5,5,8,0.9);
+            z-index: 10;
+        }
+
+        nav a {
+            margin-right: 20px;
+            color: var(--fg);
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            opacity: 0.75;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        .hero-title {
+            font-size: clamp(36px, 6vw, 56px);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero-title span {
+            color: var(--accent);
+        }
+
+        .hero-sub {
+            margin-top: 16px;
+            max-width: 620px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .section-title {
+            font-size: 14px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 20px;
+            background: rgba(10,10,18,0.8);
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding: 24px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 12px;
+        } /* HERO IMAGE ON RIGHT SIDE */
+.hero-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-image {
+    max-width: 260px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+    </style>
+</head>
+
+<body>
+<header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="bio.html">Bio</a>
+        <a href="discography.html">Discography</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="personas.html">Personas</a>
+        <a href="motifs.html">Motifs</a>
+        <a href="numerology.html">Numerology</a>
+        <a href="women.html">Women</a>
+        <a href="manifesto.html">Manifesto</a>
+        <a href="crew.html">Crew</a>
+        <a href="themes.html">Themes & Geographical</a>
+    </nav>
+</header>
+
+<div class="container">
+
+<div class="hero-flex">
+
+    <div class="hero-text">
+        <div class="hero-title">RIZZIO <span>ANTHOLOGY</span></div>
+
+        <p class="hero-sub">
+            A catalog of contradictions: seductive and satirical, mythic and mundane, raw and refined.
+            The Rizzio Trilogy forms a closed-loop universe where persona, numerology, ritual, geography,
+            and sexual surrealism collide. Each track is a ritual. Each persona is a mask and a mirror.
+            Each motif returns as coded signal. This is not just music — it is myth-making.
+        </p>
+    </div>
+
+    <img src="images/rizzio-banner.jpg" class="hero-image" alt="Rizzio Banner">
+
+</div>
+    <div class="section">
+        <div class="section-title">Core Pillars</div>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="card-title">Persona Architecture</div>
+                <div class="card-desc">
+                    Rizzio, Sir Rizz, The Rizla, Dirty Old Man, Game Show Host, Freak of the Week —
+                    a constellation of alter-voices forming a mythic identity system.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Motif Logic</div>
+                <div class="card-desc">
+                    Sally, motorway women, Miss-series, game shows, nursery rhymes, alley confrontations —
+                    recurring symbols that bind the trilogy into a single narrative organism.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Catalogic Numerology</div>
+                <div class="card-desc">
+                    Numbers as emotional codes: 5 as the sacred curve, 6 as disappointment,
+                    7 as false hope, 44‑22‑1008 as mythic cipher.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Named Women System</div>
+                <div class="card-desc">
+                    Sally, May, Fay, Pam, Jacka, the Miss-series, Ruth, Beatrice, Shanice —
+                    each functioning as symbolic nodes in the emotional architecture.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Mythic Geography</div>
+                <div class="card-desc">
+                    Tottenham, Dalston, Oakland, Georgia, Rizzio Boulevard —
+                    real places transformed into symbolic terrain.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">The Trilogy</div>
+                <div class="card-desc">
+                    Three volumes forming a ritual cycle: emergence, expansion, transcendence.
+                    A mythic arc built through persona layering and coded repetition.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 Rizzio — Catalogic Universe
+</footer>
+
+</body>
+</html>
