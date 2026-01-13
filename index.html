@@ -52,7 +52,7 @@
 
         .hero-title {
             font-size: clamp(36px, 6vw, 56px);
-            letter-spacing: 0.08em;
+            letter-letter-spacing: 0.08em;
             text-transform: uppercase;
         }
 
@@ -139,8 +139,8 @@
         }
 
         .footer-banner-img {
-            max-width: 420px;
             width: 100%;
+            max-width: 1040px;
             height: auto;
             border-radius: 12px;
             display: block;
@@ -155,6 +155,22 @@
             color: var(--muted);
             text-transform: uppercase;
             letter-spacing: 0.14em;
+        }
+
+        .footer-banner-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+
+        .footer-side-img {
+            height: 507px;
+            width: auto;
+            border-radius: 12px;
+            background-color: #000;
+            display: block;
         }
     </style>
 </head>
@@ -253,9 +269,12 @@
 
 </div>
 
-<!-- UPDATED FOOTER BANNER WITH ANTHOLOGY ONLY -->
+<!-- CLEAN, CORRECTED FOOTER -->
 <div class="footer-banner">
-    <img src="images/rizzio-banner.jpg" alt="Rizzio Footer Banner" class="footer-banner-img">
+
+    <img src="images/rizzio-bottom-banner.jpg"
+         alt="Rizzio Bottom Banner"
+         class="footer-banner-img">
 
     <div style="
         font-family: 'Orbitron', sans-serif;
@@ -266,7 +285,7 @@
         text-align: center;
         margin-top: -22px;
         line-height: 1.1;
-        transform: translateX(15px); /* half again to the right */
+        transform: translateX(15px);
     ">
         ANTHOLOGY
     </div>
@@ -277,5 +296,10 @@
         “Don’t Look — BUY!”, isn’t advertising. It’s doctrine. This is the gateway to the Trilogy:
         bold, surreal, and unmistakably Rizzio.
     </p>
+
 </div>
+
+</body>
+</html>
+
 
