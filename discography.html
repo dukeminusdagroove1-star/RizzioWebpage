@@ -1,280 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rizzio — Discography</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rizzio — Discography</title>
 
-    <style>
-        :root {
-            --bg: #050508;
-            --fg: #f5f5f5;
-            --accent: #e63946;
-            --muted: #999;
-        }
+<style>
+:root {
+    --bg: #050508;
+    --fg: #f5f5f5;
+    --accent: #e63946;
+    --muted: #999;
+}
 
-        body {
-            margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at top, #151520 0, #050508 45%, #000 100%);
-            color: var(--fg);
-        }
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #151520 0, #050508 45%, #000 100%);
+    color: var(--fg);
+}
 
-        header {
-            padding: 28px 24px;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(14px);
-            background: rgba(5,5,8,0.9);
-            z-index: 10;
-        }
+header {
+    padding: 28px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(14px);
+    background: rgba(5,5,8,0.9);
+    z-index: 10;
+}
 
-        nav a {
-            margin-right: 20px;
-            color: var(--fg);
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            opacity: 0.75;
-        }
+nav a {
+    margin-right: 20px;
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
 
-        nav a:hover {
-            opacity: 1;
-        }
+nav a:hover { opacity: 1; }
 
-        .container {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 40px 24px 80px;
-        }
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
 
-        .title {
-            font-size: clamp(32px, 5vw, 48px);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
+.title {
+    font-size: clamp(32px, 5vw, 48px);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
 
-        .title span {
-            color: var(--accent);
-        }
+.title span { color: var(--accent); }
 
-        .album {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.06);
-        }
+.album {
+    margin-top: 70px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
 
-        .album-title {
-            font-size: 20px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
+.album-title {
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
 
-        .album-desc {
-            font-size: 15px;
-            color: var(--muted);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
+.album-meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 16px;
+}
 
-        .tracklist {
-            margin-top: 12px;
-            padding-left: 20px;
-            line-height: 1.7;
-            white-space: pre-wrap;
-        }
+.album-desc {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 800px;
+}
 
-        footer {
-            margin-top: 80px;
-            padding: 24px;
-            text-align: center;
-            color: var(--muted);
-            font-size: 12px;
-        }
-    </style>
+.tracklist {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.track img {
+   .track img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+    flex-shrink: 0;
+}
+
+.track span {
+    font-size: 14px;
+    letter-spacing: 0.04em;
+}
+
+.catalogue-summary {
+    margin-top: 100px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+footer {
+    margin-top: 80px;
+    padding: 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+}
+</style>
 </head>
 
 <body>
 <header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="bio.html">Bio</a>
-        <a href="discography.html">Discography</a>
-        <a href="trilogy.html">Trilogy</a>
-        <a href="personas.html">Personas</a>
-        <a href="motifs.html">Motifs</a>
-        <a href="numerology.html">Numerology</a>
-        <a href="women.html">Women</a>
-        <a href="manifesto.html">Manifesto</a>
-        <a href="crew.html">Crew</a>
-        <a href="themes.html">Themes & Geographical</a>
-    </nav>
+<nav>
+<a href="index.html">Home</a>
+<a href="bio.html">Bio</a>
+<a href="discography.html">Discography</a>
+<a href="trilogy.html">Trilogy</a>
+<a href="personas.html">Personas</a>
+<a href="motifs.html">Motifs</a>
+<a href="numerology.html">Numerology</a>
+<a href="women.html">Women</a>
+<a href="manifesto.html">Manifesto</a>
+<a href="crew.html">Crew</a>
+<a href="themes.html">Themes & Geographical</a>
+</nav>
 </header>
 
 <div class="container">
 
-    <div class="title">RIZZIO <span>DISCOGRAPHY</span></div>
+<div class="title">RIZZIO <span>DISCOGRAPHY</span></div>
 
-    <!-- VOLUME I -->
+<!-- ASK YO' MOMMA -->
 <div class="album">
-    <div class="album-title">VOLUME I — 1994</div>
-    <div class="album-desc">
-        The origin point of the Rizzio mythos. Establishes the seductive–satirical voice,
-        the early persona fractures, the first appearance of Sally, and the foundational
-        numerology codes that echo through the trilogy.
-    </div>
-
-    <div class="tracklist">
-
-        <div class="track">
-            <div class="track-text">1. GIRL CALLED SALLY   3:05</div>
-            <img class="track-cover" src="images/girl-called-sally.jpg" alt="Girl Called Sally Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">2. IN A FUNNY WAY I DON'T FEEL SORRY YOU'RE GETTING WHAT YOU SERVED   3:48</div>
-            <img class="track-cover" src="images/in-a-funny-way
-.jpg" alt="In a Funny Way Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">3. BBRAND NNEW PPLAYER   2:41</div>
-            <img class="track-cover" src="images/bbrand-nnew-pplayer.jpg" alt="Bbrand Nnew Pplayer Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">4. END OF THE WORLD (NOT THE)   5:35</div>
-            <img class="track-cover" src="images/end-of-the-world.jpg" alt="End of the World Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">5. MOTORWAY MAN   5:17</div>
-            <img class="track-cover" src="images/motorway-man.jpg" alt="Motorway Man Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">6. MY MISSES   3:21</div>
-            <img class="track-cover" src="images/my-misses.jpg" alt="My Misses Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">7. LIKE THOSE LOVELY GIRLS SAY   2:54</div>
-            <img class="track-cover" src="images/like-those-lovely-girls-say.jpg" alt="Like Those Lovely Girls Say Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">8. BIG BOOTY BITCHES, SLUTTY SLAGS AND HORNY HOES   5:00</div>
-            <img class="track-cover" src="images/big-booty-bitches.jpg" alt="Big Booty Bitches Cover">
-        </div>
-
-    </div>
+<div class="album-title">ASK YO' MOMMA (LP) — AUG 1993</div>
+<img src="images/ASK YO MOMMA COVER.jpg" loading="lazy" style="width:400px; margin:20px 0; border-radius:8px;">
+<div class="album-meta">14 Tracks</div>
+<div class="album-desc">
+The first transmission. Persona introduced without restraint. Appetite, confidence, and repetition form the structural language that will echo through the entire catalogue. The myth begins in direct form before it fractures into masks.
 </div>
 
-    <!-- VOLUME II -->
-<div class="album">
-    <div class="album-title">VOLUME II — 1995</div>
-    <div class="album-desc">
-        The universe widens: more women, more masks, more surrealism. Sir Rizz and The Rizla
-        rise into prominence. Motifs deepen. Geography becomes symbolic terrain. The catalog
-        begins looping back on itself.
-    </div>
+<div class="tracklist">
 
-    <div class="tracklist">
+<div class="track"><img src="images/close-to-the-borderline.jpg"><span>Close To The Borderline</span></div>
+<div class="track"><img src="images/amplifier-fire.jpg"><span>Amplifier Fire</span></div>
+<div class="track"><img src="images/friends-and-strangers.jpg"><span>Friends And Strangers</span></div>
+<div class="track"><img src="images/california-flash.jpg"><span>California Flash</span></div>
+<div class="track"><img src="images/rizzios-rebirth.jpg"><span>Rizzio's Rebirth</span></div>
+<div class="track"><img src="images/saba-and-ckw.jpg"><span>Saba And CKW</span></div>
+<div class="track"><img src="images/stiletto.jpg"><span>Stiletto</span></div>
+<div class="track"><img src="images/miss-understanding.jpg"><span>Miss Understanding</span></div>
+<div class="track"><img src="images/can-i-be-a-good-boy.jpg"><span>Can I Be A Good Boy</span></div>
+<div class="track"><img src="images/down-the-boulevard.jpg"><span>Down The Boulevard</span></div>
+<div class="track"><img src="images/legend-of-my-record-collection-wickedest-selection.jpg"><span>Legend Of My Record Collection (Wickedest Selection)</span></div>
+<div class="track"><img src="images/tribute-to-eddie-hazel.jpg"><span>Tribute To Eddie Hazel</span></div>
+<div class="track"><img src="images/p-flex.jpg"><span>P Flex</span></div>
+<div class="track"><img src="images/here-to-a-special-no-thanks-son-part-1.jpg"><span>Here To A Special No Thanks Son Part 1</span></div>
 
-        <div class="track">
-            <div class="track-text">9. I’LL GET MINE IN YO' HOME   2:52</div>
-            <img class="track-cover" src="images/ill-get-mine.jpg" alt="I'll Get Mine In Yo' Home Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">10. WE’RE GLAD YOU’RE HERE   3:43</div>
-            <img class="track-cover" src="images/were-glad-youre-here.jpg" alt="We're Glad You're Here Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">11. SIX O’CLOCK   2:22</div>
-            <img class="track-cover" src="images/six-oclock.jpg" alt="Six O'Clock Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">12. WANTON STREAK   4:56</div>
-            <img class="track-cover" src="images/wanton-streak.jpg" alt="Wanton Streak Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">13. CUMMIN’ ROUND HER MOUNTAIN   4:51</div>
-            <img class="track-cover" src="images/cummin-round-her-mountain.jpg" alt="Cummin' Round Her Mountain Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">14. DIRTY OLD MAN IN A RAINCOAT   1:17</div>
-            <img class="track-cover" src="images/dirty-old-man.jpg" alt="Dirty Old Man In A Raincoat Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">15. AROUNDAWAY   4:47</div>
-            <img class="track-cover" src="images/aroundaway.jpg" alt="Aroundaway Cover">
-        </div>
-
-    </div>
+</div>
 </div>
 
-    <!-- VOLUME III -->
+<!-- DON'T LOOK - BUY!! -->
 <div class="album">
-    <div class="album-title">VOLUME III — 1996</div>
-    <div class="album-desc">
-        The myth reaches its apex. Persona layering becomes ritual. Numerology becomes prophecy.
-        The catalog closes its loop, transforming Rizzio from performer into myth‑maker.
-    </div>
-
-    <div class="tracklist">
-
-        <div class="track">
-            <div class="track-text">16. DESPERATE TIMES   5:03</div>
-            <img class="track-cover" src="images/desperate-times.jpg" alt="Desperate Times Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">17. KNOW THA GAME   5:14</div>
-            <img class="track-cover" src="images/know-tha-game.jpg" alt="Know Tha Game Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">18. C DA REAL   4:41</div>
-            <img class="track-cover" src="images/c-da-real.jpg" alt="C Da Real Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">19. PLAYTIME   4:13</div>
-            <img class="track-cover" src="images/playtime.jpg" alt="Playtime Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">20. U GET ME   4:39</div>
-            <img class="track-cover" src="images/u-get-me.jpg" alt="U Get Me Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">21. BANGIN'   4:22</div>
-            <img class="track-cover" src="images/bangin.jpg" alt="Bangin' Cover">
-        </div>
-
-        <div class="track">
-            <div class="track-text">22. YOU’RE GOIN’ DOWN YOU SLAGG   4:58</div>
-            <img class="track-cover" src="images/youre-goin-down.jpg" alt="You're Goin' Down You Slagg Cover">
-        </div>
-
-    </div>
+<div class="album-title">DON'T LOOK - BUY!! (LP) — SEPT 1993</div>
+<img src="images/DONT LOOK BUY COVER.jpg" loading="lazy" style="width:400px; margin:20px 0; border-radius:8px;">
+<div class="album-meta">14 Tracks</div>
+<div class="album-desc">
+Doctrine replaces introduction. Performance merges with transaction. Geography enters the frame and satire sharpens. The “Here To A Special…” sequence continues, embedding recurrence as structural spine rather than repetition.
 </div>
 
-<footer>
-    © 2025 Rizzio — Catalogic Universe
-</footer>
+<div class="tracklist">
 
-</body>
-</html>
+<div class="track"><img src="images/girl-called-sally.jpg"><span>Girl Called Sally</span></div>
+<div class="track"><img src="images/may-kit-fun-key.jpg"><span>May-Kit-Fun-Key</span></div>
+<div class="track"><img src="images/nasty-iz-nicety.jpg"><span>Nasty Iz Nicety</span></div>
+<div class="track"><img src="images/tottenham.jpg"><span>Tottenham</span></div>
+<div class="track"><img src="images/what-a-difference-a-day-makes.jpg"><span>What A Difference A Day Makes</span></div>
+<div class="track"><img src="images/undercover-business.jpg"><span>Undercover Business</span></div>
+<div class="track"><img src="images/flyonchildren.jpg"><span>Flyonchildren</span></div>
+<div class="track"><img src="images/on-the-beach-lies-a-boy.jpg"><span>On The Beach Lies A Boy</span></div>
+<div class="track"><img src="images/ocu4a3t-yi8r12b.jpg"><span>OCU4A3T YI8R12B</span></div>
+<div class="track"><img src="images/you-scared-me-baby.jpg"><span>You Scared Me Baby</span></div>
+<div class="track"><img src="images/in-a-funny-way-i-dont-feel-sorry-youre-getting-what-you-served.jpg"><span>In A Funny Way I Don't Feel Sorry You're Getting What You Served</span></div>
+<div class="track"><img src="images/bbrand-nnew-pplayer.jpg"><span>Bbrand Nnew Pplayer</span></div>
+<div class="track"><img src="images/end-of-the-world-not-the.jpg"><span>End Of The World (Not The)</span></div>
+<div class="track"><img src="images/here-to-a-special-no-thank-you-part-two.jpg"><span>Here To A Special No Thank You Part Two</span></div>
 
+</div>
+</div>
+
+
+<!-- LYRICAL CONTENT -->
+<div class="album">
+<div class="album-title">LYRICAL CONTENT (LP) — FEB 1994</div>
+<img src="images/LYRICAL CONTENT COVER.jpg" loading="lazy" style="width:400px; margin:20px 0; border-radius:8px;">
+<div class="album-meta">15 Tracks</div>
+<div class="album-desc">
+Technique intensifies. Persona fragments multiply. Wordplay becomes deliberate engineering rather than instinct. Social commentary emerges beneath bravado, expanding the myth beyond seduction into observation.
+</div>
+
+<div class="tracklist">
+
+<div class="track"><img src="images/music-of-the-world.jpg"><span>Music Of The World</span></div>
+<div class="track"><img src="images/a-mind-is-a-terrible-thing-to-waste.jpg"><span>A Mind Is A Terrible Thing To Waste</span></div>
+<div class="track"><img src="images/69.jpg"><span>69</span></div>
+<div class="track"><img src="images/fear-of-a-black-tenant.jpg"><span>Fear Of A Black Tenant</span></div>
+<div class="track"><img src="images/girl-wont-even-notice-she-smells-bad.jpg"><span>Girl Won't Even Notice (She Smells Bad)</span></div>
+<div class="track"><img src="images/zzzzzz-interlude.jpg"><span>Zzzzzz(Interlude)</span></div>
+<div class="track"><img src="images/superrizzio-save-the-day.jpg"><span>SuperRizzio (Save The Day!)</span></div>
+<div class="track"><img src="images/motorway-man.jpg"><span>Motorway Man</span></div>
+<div class="track"><img src="images/end-of-the-world-us-remix.jpg"><span>End Of The World (U.S. Remix)</span></div>
+<div class="track"><img src="images/keep-it-dark.jpg"><span>Keep It Dark</span></div>
+<div class="track"><img src="images/placebo-pimp-hustlin-gangster.jpg"><span>Placebo Pimp Hustlin' Gangster</span></div>
+<div class="track"><img src="images/my-misses.jpg"><span>My Misses</span></div>
+<div class="track"><img src="images/x-rated.jpg"><span>X-Rated</span></div>
+<div class="track"><img src="images/like-those-lovely-girls-say.jpg"><span>Like Those Lovely Girls Say</span></div>
+<div class="track"><img src="images/here-to-a-special-no-thank-me-part-three.jpg"><span>Here To A Special No Thank Me Part Three</span></div>
+
+</div>
+</div>
+
+
+<!-- I'LL GET MINE IN YO' HOME -->
+<div class="album">
+<div class="album-title">I'LL GET MINE IN YO' HOME (LP) — SEP 1994</div>
+<img src="images/ILL GET MINE IN YO HOME COVER.jpg" loading="lazy" style="width:400px; margin:20px 0; border-radius:8px;">
+<div class="album-meta">14 Tracks</div>
+<div class="album-desc">
+Territory becomes metaphor. The “home” shifts from location to psychological domain. Sir Rizz stabilises as persona form while the ritual sequence extends its spine deeper into the catalogue.
+</div>
+
+<div class="tracklist">
+
+<div class="track"><img src="images/big-booty-bitches-slutty-slags-and-horny-hoes.jpg"><span>Big Booty Bitches, Slutty Slags And Horny Hoes</span></div>
+<div class="track"><img src="images/ill-get-mine-in-yo-home.jpg"><span>I'll Get Mine In Yo' Home</span></div>
+<div class="track"><img src="images/were-glad-youre-here.jpg"><span>We're Glad You're Here</span></div>
+<div class="track"><img src="images/rappin-will-get-you-nowhere-on-the-dancefloor.jpg"><span>Rappin' Will Get You Nowhere On The Dancefloor</span></div>
+<div class="track"><img src="images/journey-through-da-lon-town.jpg"><span>Journey Through Da Lon-Town</span></div>
+<div class="track"><img src="images/phone-call-yall.jpg"><span>Phone Call Yall</span></div>
+<div class="track"><img src="images/queue-up-all-yall-pre-funkadelics-peoples.jpg"><span>Queue Up All Y'all Pre-Funkadelics Peoples</span></div>
+<div class="track"><img src="images/six-oclock.jpg"><span>Six O'Clock</span></div>
+<div class="track"><img src="images/fiz-zong-haz-kno-tytal.jpg"><span>Fiz Zong Haz Kno Tytal</span></div>
+<div class="track"><img src="images/pointless-niggaz.jpg"><span>Pointless Niggaz</span></div>
+<div class="track"><img src="images/ya-know-tha-drill.jpg"><span>Ya Know Tha Drill</span></div>
+<div class="track"><img src="images/v-riddla.jpg"><span>V Riddla</span></div>
+<div class="track"><img src="images/sir-rizz.jpg"><span>Sir Rizz</span></div>
+<div class="track"><img src="images/here-to-a-special-no-thank-your-part-four.jpg"><span>Here To A Special No Thank Your Part Four</span></div>
+
+</div>
+</div>
+
+<!-- COMIN' ROUNDA MOUNTAIN -->
+<div class="album">
+<div class="album-title">COMIN' ROUNDA MOUNTAIN (LP) — JAN 1995</div>
+<img src="images/COMIN ROUNDA MOUNTAIN COVER.jpg" loading="lazy" style="width:400px; margin:20px 0; border-radius:8px;">
+<div class="album-meta">17 Tracks</div>
+<div class="album-desc">
+Expansion phase. Persona elasticity increases and recurrence turns ritual. The Named Women System consolidates while satire sharpens into structural exaggeration. This is the longest movement of the era, and it behaves like it.
+</div>
+
+<div class="tracklist">
+
+<div class="track"><img src="images/cant-stay-away.jpg"><span>Can't Stay Away</span></div>
+<div class="track"><img src="images/wanton-streak.jpg"><span>Wanton Streak</span></div>
+<div class="track"><img src="images/cummin-round-her-mountain.jpg"><span>Cummin' Round Her Mountain</span></div>
+<div class="track"><img src="images/zany-maniac.jpg"><span>Zany Maniac</span></div>
+<div class="track"><img src="images/dirty-old-man-in-a-raincoat.jpg"><span>Dirty Old Man In A Raincoat</span></div>
+<div class="track"><img src="images/favourite-word-is-f-part-1.jpg"><span>Favourite Word Is F (Part 1)</span></div>
+<div class="track"><img src="images/vitamin-f-part-2.jpg"><span>Vitamin F (Part 2)</span></div>
+<div class="track"><img src="images/u-no-u-could-b-good-2-u.jpg"><span>U No U Could B Good 2 U</span></div>
+<div class="track"><img src="images/vinyl-vs-cd.jpg"><span>Vinyl Vs C.D</span></div>
+<div class="track"><img src="images/homiez-all-knowz-me.jpg"><span>Homiez All Knowz Me</span></div>
+<div class="track"><img src="images/aroundaway.jpg"><span>Aroundaway</span></div>
+<div class="track"><img src="images/death-to-the-stupid-salesman.jpg"><span>Death To The Stupid Salesman</span></div>
+<div class="track"><img src="images/put-on-you-chocolate-stuff.jpg"><span>Put On You Chocolate Stuff</span></div>
+<div class="track"><img src="images/trajic-hour.jpg"><span>Trajic Hour</span></div>
+<div class="track"><img src="images/nothing-has-changed.jpg"><span>Nothing Has Changed</span></div>
+<div class="track"><img src="images/aroundaway-featuring-ph2-aka-infra-red.jpg"><span>Aroundaway (Featuring P.H.2 Aka Infra-Red)</span></div>
+<div class="track"><img src="images/here-to-a-special-no-thank-my-part-5.jpg"><span>Here To A Special No Thank My Part 5</span></div>
+
+</div>
+</div>
+
+
+<!-- EQUALOPPORTUNITYNASTIES -->
+<div class="album">
+<div class="album-title">EQUALOPPORTUNITYNASTIES (LP) — JUL 1995</div>
+<img src="images/EQUALOPPORTUNITYNASTIES COVER.jpg" loading="lazy" style="width:400px; margin:20px 0; border-radius:8px;">
+<div class="album-meta">17 Tracks</div>
+<div class="album-desc">
+Compression and provocation. Appetite becomes mirror. Persona exaggerates itself to expose itself. The ritual spine advances again, reinforcing longitudinal continuity across albums.
+</div>
+
+<div class="tracklist">
+
+<div class="track"><img src="images/here-to-a-special-no-thank-his-part-6.jpg"><span>Here To A Special No Thank His Part 6</span></div>
+<div class="track"><img src="images/renegades-f-project-x-starring-cynthia-and-debbie.jpg"><span>Renegades (F Project - X starring Cynthia & Debbie)</span></div>
+<div class="track"><img src="images/this-goes-out-to-the-lon-town-fproject-x.jpg"><span>This Goes Out To The Lon-Town (Featuring Project X)</span></div>
+<div class="track"><img src="images/ashleys-goin-church.jpg"><span>Ashley's Goin' Church!</span></div>
+<div class="track"><img src="images/capms-log.jpg"><span>Cap'm's Log</span></div>
+<div class="track"><img src="images/nikkis-nikkers.jpg"><span>Nikki's Nikkers</span></div>
+<div class="track"><img src="images/comin-4-u.jpg"><span>Comin' 4 U</span></div>
+<div class="track"><img src="images/wanted.jpg"><span>Wanted</span></div>
+<div class="track"><img src="images/px-reps.jpg"><span>PX Reps</span></div>
+<div class="track"><img src="images/cautious-my-precious.jpg"><span>Cautious My Precious</span></div>
+<div class="track"><img src="images/fishermans-friend.jpg"><span>Fisherman's Friend</span></div>
+<div class="track"><img src="images/necessary-necessities.jpg"><span>Necessary Necessities</span></div>
+<div class="track"><img src="images/injustice.jpg"><span>Injustice</span></div>
+<div class="track"><img src="images/odds-are-stacked-against-me.jpg"><span>Odds Are Stacked Against Me</span></div>
+<div class="track"><img src="images/man-of-the-match.jpg"><span>Man Of The Match</span></div>
+<div class="track"><img src="images/untitled.jpg"><span>Untitled</span></div>
+<div class="track"><img src="images/here-to-a-special-thank-heavens-part-7.jpg"><span>Here To A Special Thank Heavens Part 7</span></div>
+
+</div>
+</div>
+
+
+<!-- DREAD GROOVES HORIZONTAL -->
+<div class="album">
+<div class="album-title">DREAD GROOVES HORIZONTAL (LP) — JAN 1996</div>
+<img src="images/DREAD GROOVES HORIZONTAL COVER.jpg" loading="lazy" style="width:400px; margin:20px 0; border-radius:8px;">
+<div class="album-meta">17 Tracks</div>
+<div class="album-desc">
+Atmosphere overtakes confrontation. Groove becomes structural. Persona stabilises rather than provokes. The mythology deepens through immersion rather than declaration.
+</div>
+
+<div class="tracklist">
+
+<div class="track"><img src="images/here-to-a-special-no-thanks-mate-part-8.jpg"><span>Here To A Special No Thanks Mate Part 8</span></div>
+<div class="track"><img src="images/so-you-wanna-be-a-boxer.jpg"><span>So You Wanna Be A Boxer?</span></div>
+<div class="track"><img src="images/night-mare-animal-instincts.jpg"><span>Night-Mare Animal Instincts</span></div>
+<div class="track"><img src="images/house-of-lordz.jpg"><span>House Of Lordz</span></div>
+<div class="track"><img src="images/metaphors-4-beta-scores.jpg"><span>Metaphors 4 Beta Scores</span></div>
+<div class="track"><img src="images/defy-the-laws-of-physics.jpg"><span>Defy The Laws Of Physics</span></div>
+<div class="track"><img src="images/i-will-never-never-surrender.jpg"><span>I Will Never Never Surrender</span></div>
+<div class="track"><img src="images/red-blue-colour-me-funky.jpg"><span>Red Blue (Colour Me Funky)</span></div>
+<div class="track"><img src="images/dicey.jpg"><span>Dicey</span></div>
+<div class="track"><img src="images/projex-in-fx-iz-px.jpg"><span>Projex In FX Iz PX</span></div>
+<div class="track"><img src="images/pack-neva-stacks.jpg"><span>Pack Neva Stacks</span></div>
+<div class="track"><img src="images/sho-n-tel-shona-tallulah.jpg"><span>Sho' 'N' 'Tel (Shona & Tallulah)</span></div>
+<div class="track"><img src="images/confucius-says.jpg"><span>Confucius Says</span></div>
+<div class="track"><img src="images/i-dont-make-no-erm-ology.jpg"><span>I Don't Make No Erm-Ology</span></div>
+
+<div class="track"><img src="images/bring-your-dinner-too.jpg"><span>Bring Your Dinner Too</span></div>
+<div class="track"><img src="images/the-executive-seducer.jpg"><span>The Executive Seducer</span></div>
+
+<div class="track"><img src="images/here-to-a-special-no-thank-mine-part-9.jpg"><span>Here To A Special No Thank Mine Part 9</span></div>
+
+</div>
+</div>
+
+
+<!-- THE PROJEXT X ERA -->
+<div class="album">
+<div class="album-title">THE PROJEXT X ERA — THE AMERICANS SET THE FOUNDATION (LP) — JUN 1997</div>
+<img src="images/PROJEXT X ERA COVER.jpg" loading="lazy" style="width:400px; margin:20px 0; border-radius:8px;">
+<div class="album-meta">13 Tracks</div>
+<div class="album-desc">
+Geography widens. Confidence consolidates. Persona reaches full stabilisation. The ten-part ritual spine completes, closing the first circuit of the catalogue and sealing the foundation era.
+</div>
+
+<div class="tracklist">
+
+<div class="track"><img src="images/bad-lyrics.jpg"><span>Bad Lyrics</span></div>
+<div class="track"><img src="images/tings-and-stuff.jpg"><span>Tings And Stuff</span></div>
+<div class="track"><img src="images/ghetto-street-stuff.jpg"><span>Ghetto Street Stuff</span></div>
+<div class="track"><img src="images/desperate-times.jpg"><span>Desperate Times</span></div>
+<div class="track"><img src="images/know-tha-game.jpg"><span>Know Tha Game</span></div>
+<div class="track"><img src="images/c-da-real.jpg"><span>C Da Real</span></div>
+<div class="track"><img src="images/playtime.jpg"><span>Playtime</span></div>
+<div class="track"><img src="images/u-get-me.jpg"><span>U Get Me</span></div>
+<div class="track"><img src="images/bangin.jpg"><span>Bangin'</span></div>
+<div class="track"><img src="images/youre-goin-down-you-slagg.jpg"><span>You're Goin' Down You Slagg</span></div>
+<div class="track"><img src="images/who-da-baddest.jpg"><span>Who Da Baddest</span></div>
+<div class="track"><img src="images/know-tha-game-sir-rizz-mixx.jpg"><span>Know Tha Game (Sir Rizz Mixx)</span></div>
+<div class="track"><img src="images/here-to-a-special-no-thanks-then-part-10.jpg"><span>Here To A Special No Thanks Then Part 10</span></div>
+
+</div>
+</div>
+
+
+<!-- CATALOGUE SUMMARY -->
+<div class="catalogue-summary">
+<strong>Catalogue Summary</strong><br>
+Total LPs: 8<br>
+Total Tracks: 121<br>
+Total Runtime: 5:02:43<br><br>
+The Foundation Era establishes the closed-loop architecture of the Rizzio system. Persona Architecture, Motif Logic, Numerological Coding, and Mythic Geography all originate here. Later volumes expand the mythology. This is where it becomes structurally irreversible.
+</div>
