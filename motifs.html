@@ -1,108 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rizzio — Motifs</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rizzio — Motifs</title>
 
-    <style>
-        :root {
-            --bg: #050508;
-            --fg: #f5f5f5;
-            --accent: #d4af37;
-            --muted: #999;
-        }
+<style>
+:root {
+    --bg: #050508;
+    --fg: #f5f5f5;
+    --accent: #d4af37;
+    --muted: #999;
+}
 
-        body {
-            margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at top, #151520 0, #050508 45%, #000 100%);
-            color: var(--fg);
-        }
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #151520 0, #050508 45%, #000 100%);
+    color: var(--fg);
+}
 
-        header {
-            padding: 28px 24px;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(14px);
-            background: rgba(5,5,8,0.9);
-            z-index: 10;
-        }
+header {
+    padding: 28px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(14px);
+    background: rgba(5,5,8,0.9);
+    z-index: 10;
+}
 
-        nav a {
-            margin-right: 20px;
-            color: var(--fg);
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            opacity: 0.75;
-        }
+nav a {
+    margin-right: 20px;
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
 
-        nav a:hover {
-            opacity: 1;
-        }
+nav a:hover {
+    opacity: 1;
+}
 
-        .container {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 40px 24px 80px;
-        }
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
 
-        .title {
-            font-size: clamp(32px, 5vw, 48px);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
+.title {
+    font-size: clamp(32px, 5vw, 48px);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
 
-        .title span {
-            color: var(--accent);
-        }
+.title span {
+    color: var(--accent);
+}
 
-        .content {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #e0e0e0;
-            white-space: normal;
-        }
+.content {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #e0e0e0;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 24px;
-        }
+/* REFINED TABLE STYLE */
 
-        th, td {
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 10px;
-            vertical-align: top;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    background: rgba(12,12,20,0.6);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 8px;
+    overflow: hidden;
+}
 
-        th {
-            background: rgba(255,255,255,0.08);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
+th {
+    background: rgba(212,175,55,0.08);
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 13px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(212,175,55,0.35);
+}
 
-        footer {
-            margin-top: 80px;
-            padding: 24px;
-            text-align: center;
-            color: var(--muted);
-            font-size: 12px;
-        }
-    </style>
+td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 14px;
+    vertical-align: top;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: rgba(212,175,55,0.05);
+}
+
+footer {
+    margin-top: 80px;
+    padding: 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+}
+</style>
 </head>
 
 <body>
 <header>
-    <nav>
-        <a href="index.html">Home</a>
+<nav>
+    <a href="index.html">Home</a>
         <a href="bio.html">Bio</a>
-        <a href="discography.html">Discography</a>
-        <a href="trilogy.html">Trilogy</a>
+        <a href="albums.html">Albums</a>
         <a href="personas.html">Personas</a>
         <a href="motifs.html">Motifs</a>
         <a href="numerology.html">Numerology</a>
@@ -110,176 +127,141 @@
         <a href="manifesto.html">Manifesto</a>
         <a href="crew.html">Crew</a>
         <a href="themes.html">Themes & Geographical</a>
-    </nav>
+</nav>
 </header>
 
 <div class="container">
 
-    <div class="title">RIZZIO <span>MOTIFS</span></div>
+<div class="title">RIZZIO <span>MOTIFS</span></div>
 
-    <div class="content">
+<div class="content">
 
-<h2 id="motifs">🔁 Motif Threads</h2>
+<h2>RECURRENCE REGISTRY — FOUNDATION ERA</h2>
 
 <svg viewBox="0 0 64 64" width="64" height="64"
-     aria-label="Woman music motif thread icon" role="img"
-     style="vertical-align: middle;">
-
-  <!-- Circular arrow loop -->
-  <path d="M32 10
-           A22 22 0 1 1 10 32"
-        fill="none"
-        stroke="#d4af37"
-        stroke-width="4"
-        stroke-linecap="round" />
-
-  <!-- Arrowhead -->
-  <path d="M10 32 L14 33 L12 37 Z"
-        fill="#d4af37" />
-
-  <!-- Number 5 -->
-  <text x="32" y="38"
-        text-anchor="middle"
-        fill="#d4af37"
-        font-size="18"
-        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-        font-weight="700">
-    5
-  </text>
-
-  <!-- Musical note -->
-  <circle cx="42" cy="42" r="3" fill="#d4af37" />
-  <rect x="41" y="28" width="2" height="14" fill="#d4af37" />
-  <path d="M43 28 L50 26 L50 28 L43 30 Z" fill="#d4af37" />
-
-  <!-- Waveform -->
-  <polyline points="18,48 22,46 26,50 30,46 34,50 38,46 42,48"
-            fill="none"
-            stroke="#d4af37"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round" />
-
+aria-label="Motif registry icon"
+style="margin-bottom:16px;">
+<path d="M32 10 A22 22 0 1 1 10 32"
+fill="none"
+stroke="#d4af37"
+stroke-width="4"
+stroke-linecap="round"/>
+<path d="M10 32 L14 33 L12 37 Z" fill="#d4af37"/>
+<text x="32" y="38"
+text-anchor="middle"
+fill="#d4af37"
+font-size="18"
+font-weight="700">5</text>
 </svg>
 
-<table border="1" cellpadding="6" cellspacing="0">
+<table>
 
-  <tr>
-    <th>Motif / Phrase</th>
-    <th>Appears In</th>
-    <th>Function / Symbolism</th>
-  </tr>
+<tr>
+<th>Motif</th>
+<th>Category</th>
+<th>Recurrence Type</th>
+<th>Structural Function</th>
+</tr>
 
-  <tr>
-    <td>“Girl called Sally”</td>
-    <td>Vol 1, 2</td>
-    <td>Recurring feminine archetype; destabilizes Rizzio’s bravado; cross‑track continuity</td>
-  </tr>
+<tr>
+<td>“Girl called Sally”</td>
+<td>Named Woman</td>
+<td>Cross-LP</td>
+<td>Destabilizes bravado; emotional continuity node</td>
+</tr>
 
-  <tr>
-    <td>“Motorway / motorway man”</td>
-    <td>Vol 2</td>
-    <td>Nomadic masculinity; regional conquest; restless identity</td>
-  </tr>
+<tr>
+<td>Miss-Series (Miss Lay, Miss Use, Miss Take)</td>
+<td>Wordplay Taxonomy</td>
+<td>Cluster Motif</td>
+<td>Cataloging desire through linguistic fragmentation</td>
+</tr>
 
-  <tr>
-    <td>“Monday / Friday woman”</td>
-    <td>Vol 2</td>
-    <td>Ritualized desire; weekly rhythm; structured hedonism</td>
-  </tr>
+<tr>
+<td>“I’ll get mine in your home”</td>
+<td>Seduction Signal</td>
+<td>Repetitive Invocation</td>
+<td>Territorial rhythm ritual</td>
+</tr>
 
-  <tr>
-    <td>“Miss‑series” (Miss Lay, Miss Use, Miss Take, etc.)</td>
-    <td>Vol 2</td>
-    <td>Wordplay as emotional taxonomy; cataloging past lovers; satire of relationships</td>
-  </tr>
+<tr>
+<td>“Six o’clock”</td>
+<td>Temporal Marker</td>
+<td>Symbolic Return</td>
+<td>Disappointment / structural inversion</td>
+</tr>
 
-  <tr>
-    <td>“Big booty / slags / hoes”</td>
-    <td>Vol 2</td>
-    <td>Hyperbolic sexual universe; comedic vulgarity; dominance through dismissal</td>
-  </tr>
+<tr>
+<td>“Freak of the week”</td>
+<td>Persona Invocation</td>
+<td>Multi-Album Echo</td>
+<td>Ritual activation phrase</td>
+</tr>
 
-  <tr>
-    <td>“Lawyer / legal persona”</td>
-    <td>Vol 1, 2</td>
-    <td>Mock authority; rhetorical dominance; emotional defensiveness</td>
-  </tr>
+<tr>
+<td>Game Show framing</td>
+<td>Satirical Device</td>
+<td>Thematic Phase</td>
+<td>Conquest as spectacle; masculinity broadcast</td>
+</tr>
 
-  <tr>
-    <td>“Alley confrontation”</td>
-    <td>Vol 2</td>
-    <td>Shadow‑realm encounter; ego rupture; unresolved tension with Sally</td>
-  </tr>
+<tr>
+<td>Aroundaway / Lon-Town</td>
+<td>Geographic Identity</td>
+<td>Mythic Loop</td>
+<td>Local legend amplification</td>
+</tr>
 
-  <tr>
-    <td>“Game show”</td>
-    <td>Vol 2</td>
-    <td>Satire; seduction as spectacle; conquest framed as entertainment</td>
-  </tr>
+<tr>
+<td>Two-woman orchestration</td>
+<td>Sexual Staging</td>
+<td>Scenario Recurrence</td>
+<td>Dominance through rhythm choreography</td>
+</tr>
 
-  <tr>
-    <td>“Bo Peep / nursery rhyme inversion”</td>
-    <td>Vol 2</td>
-    <td>Corruption of innocence; playful transgression; surreal eroticism</td>
-  </tr>
+<tr>
+<td>“Know the game”</td>
+<td>Strategic Doctrine</td>
+<td>Return Phrase</td>
+<td>Survival awareness and masculine code</td>
+</tr>
 
-  <tr>
-    <td>“Aroundaway / around the way”</td>
-    <td>Vol 2</td>
-    <td>Local legend; neighborhood mythology; ego vs. reputation</td>
-  </tr>
+<tr>
+<td>“Desperate times”</td>
+<td>Social Signal</td>
+<td>Environmental Echo</td>
+<td>Pressure environment intensifier</td>
+</tr>
 
-  <tr>
-    <td>“Two‑woman scene (Beatrice & Shanice)”</td>
-    <td>Vol 2</td>
-    <td>Sexual orchestration; dominance; chaotic pleasure ritual</td>
-  </tr>
+<tr>
+<td>Here To A Special… (Parts 1–10)</td>
+<td>Ritual Spine</td>
+<td>Sequential Structure</td>
+<td>Foundation Era sealing mechanism</td>
+</tr>
 
-  <tr>
-    <td>“Model disdain / Naomi reference”</td>
-    <td>Vol 2</td>
-    <td>Anti‑glamour stance; contempt for superficial beauty; rejection of elite culture</td>
-  </tr>
-
-  <tr>
-    <td>“Ack ack / gag gag”</td>
-    <td>Vol 1</td>
-    <td>Percussive chant; sonic spell; rhythmic aggression</td>
-  </tr>
-
-  <tr>
-    <td>“Freak of the week”</td>
-    <td>Vol 2, 3</td>
-    <td>Persona invocation; ritual chaos; sexual surrealism</td>
-  </tr>
-
-  <tr>
-    <td>“Playtime”</td>
-    <td>Vol 3</td>
-    <td>Sex as metaphor; rhythm as foreplay; childlike word flipped adult</td>
-  </tr>
-
-  <tr>
-    <td>“Know the game”</td>
-    <td>Vol 3</td>
-    <td>Strategy; survival; street wisdom; masculine code</td>
-  </tr>
-
-  <tr>
-    <td>“Desperate times”</td>
-    <td>Vol 3</td>
-    <td>Social decay; emotional urgency; pressure‑cooker environment</td>
-  </tr>
+<tr>
+<td>Numerical Invocation (5 / 6 / 7)</td>
+<td>Encoded System</td>
+<td>Embedded Pattern</td>
+<td>Emotional mapping through number symbolism</td>
+</tr>
 
 </table>
 
-    </div>
+<p style="margin-top:28px;">
+Motifs are not decorative repetition.  
+They are signal returns within a closed system.  
+Across 122 tracks, recurrence becomes structure.  
+Structure becomes doctrine.
+</p>
+
+</div>
 
 </div>
 
 <footer>
-    © 2025 Rizzio — Catalogic Universe
+© 2025 Rizzio — Recurrence Index
 </footer>
 
 </body>
