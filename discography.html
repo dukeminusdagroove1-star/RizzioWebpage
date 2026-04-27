@@ -88,7 +88,16 @@ li {
     padding: 4px 0;
     font-size: 15px;
     letter-spacing: 0.03em;
-    color: #eaeaea;
+    color: #ffffff !important;
+}
+
+li:hover {
+    color: #e63946 !important;
+}
+
+/* TRACK LINKS HOVER RED */
+li a:hover {
+    color: #e63946 !important;
 }
 
 li::before {
@@ -96,7 +105,37 @@ li::before {
     color: var(--accent);
 }
 
+/* LINK FIX */
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #fff;
+}
+
+/* HIGHLIGHTED TEXT → RED */
+::selection {
+    background: #e63946;
+    color: #ffffff;
+}
+
+::-moz-selection {
+    background: #e63946;
+    color: #ffffff;
+}
 </style>
+
 </head>
 
 <body>
@@ -104,16 +143,17 @@ li::before {
 <header>
 <nav>
 <a href="index.html">Home</a>
-        <a href="bio.html">Bio</a>
-        <a href="discography.html">Discography</a>
-        <a href="albums.html">Albums</a>
-        <a href="personas.html">Personas</a>
-        <a href="motifs.html">Motifs</a>
-        <a href="numerology.html">Numerology</a>
-        <a href="women.html">Women</a>
-        <a href="manifesto.html">Manifesto</a>
-        <a href="crew.html">Crew</a>
-        <a href="themes.html">Themes & Geographical</a>
+<a href="bio.html">Bio</a>
+<a href="discography.html">Discography</a>
+<a href="albums.html">Albums</a>
+<a href="personas.html">Personas</a>
+<a href="motifs.html">Motifs</a>
+<a href="numerology.html">Numerology</a>
+<a href="women.html">Women</a>
+<a href="manifesto.html">Manifesto</a>
+<a href="crew.html">Crew</a>
+<a href="themes.html">Themes & Geographical</a>
+
 </nav>
 </header>
 
@@ -122,23 +162,23 @@ li::before {
 <div class="title">RIZZIO <span>SONG DISCOGRAPHY</span></div>
 <div class="subtitle">Complete alphabetical index of the 122-track Foundation Era catalogue</div>
 
+<!-- 0–9 -->
 <div class="section">
 <h2>0–9</h2>
 <ul>
-<li>69</li>
+<li><a href="Album3.html">69</a></li>
 </ul>
 </div>
-
 
 <!-- A -->
 <div class="section">
 <h2>A</h2>
 <ul>
-<li>A Mind Is A Terrible Thing To Waste</li>
-<li>Amplifier Fire</li>
-<li>Aroundaway</li>
-<li>Aroundaway (Featuring P.H.2 Aka Infra-Red)</li>
-<li>Ashley’s Goin’ Church!</li>
+<li><a href="Album3.html">A Mind Is A Terrible Thing To Waste</a></li>
+<li><a href="Album1.html">Amplifier Fire</a></li>
+<li><a href="Album5.html">Aroundaway</a></li>
+<li><a href="Album5.html">Aroundaway (Featuring P.H.2 Aka Infra-Red)</a></li>
+<li><a href="Album6.html">Ashley’s Goin’ Church!</a></li>
 </ul>
 </div>
 
@@ -146,11 +186,11 @@ li::before {
 <div class="section">
 <h2>B</h2>
 <ul>
-<li>Bad Lyrics</li>
-<li>Bangin’</li>
-<li>Bbrand Nnew Pplayer</li>
-<li>Big Booty Bitches, Slutty Slags And Horny Hoes</li>
-<li>Bring Your Dinner Too</li>
+<li><a href="Album8.html">Bad Lyrics</a></li>
+<li><a href="Album8.html">Bangin’</a></li>
+<li><a href="Album2.html">Bbrand Nnew Pplayer</a></li>
+<li><a href="Album4.html">Big Booty Bitches, Slutty Slags And Horny Hoes</a></li>
+<li><a href="Album7.html">Bring Your Dinner Too</a></li>
 </ul>
 </div>
 
@@ -158,16 +198,16 @@ li::before {
 <div class="section">
 <h2>C</h2>
 <ul>
-<li>C Da Real</li>
-<li>California Flash</li>
-<li>Can I Be A Good Boy?</li>
-<li>Cant Stay Away</li>
-<li>Cap’m’s Log</li>
-<li>Cautious My Precious</li>
-<li>Close To The Borderline</li>
-<li>Comin’ 4 U</li>
-<li>Confucius Says</li>
-<li>Cummin’ Round Her Mountain</li>
+<li><a href="Album8.html">C Da Real</a></li>
+<li><a href="Album1.html">California Flash</a></li>
+<li><a href="Album1.html">Can I Be A Good Boy?</a></li>
+<li><a href="Album5.html">Can't Stay Away</a></li>
+<li><a href="Album6.html">Cap’m’s Log</a></li>
+<li><a href="Album6.html">Cautious My Precious</a></li>
+<li><a href="Album1.html">Close To The Borderline</a></li>
+<li><a href="Album6.html">Comin’ 4 U</a></li>
+<li><a href="Album7.html">Confucius Says</a></li>
+<li><a href="Album5.html">Cummin’ Round Her Mountain</a></li>
 </ul>
 </div>
 
@@ -175,12 +215,12 @@ li::before {
 <div class="section">
 <h2>D</h2>
 <ul>
-<li>Death To The Stupid Salesman</li>
-<li>Defy The Laws Of Physics</li>
-<li>Desperate Times</li>
-<li>Dicey</li>
-<li>Dirty Old Man In A Raincoat</li>
-<li>Down The Boulevard</li>
+<li><a href="Album5.html">Death To The Stupid Salesman</a></li>
+<li><a href="Album7.html">Defy The Laws Of Physics</a></li>
+<li><a href="Album8.html">Desperate Times</a></li>
+<li><a href="Album7.html">Dicey</a></li>
+<li><a href="Album5.html">Dirty Old Man In A Raincoat</a></li>
+<li><a href="Album1.html">Down The Boulevard</a></li>
 </ul>
 </div>
 
@@ -188,9 +228,9 @@ li::before {
 <div class="section">
 <h2>E</h2>
 <ul>
-<li>End Of The World (Not The)</li>
-<li>End Of The World (U.S. Remix)</li>
-<li>Executive Seducer, The</li>
+<li><a href="Album2.html">End Of The World (Not The)</a></li>
+<li><a href="Album3.html">End Of The World (U.S. Remix)</a></li>
+<li><a href="Album7.html">Executive Seducer, The</a></li>
 </ul>
 </div>
 
@@ -198,12 +238,12 @@ li::before {
 <div class="section">
 <h2>F</h2>
 <ul>
-<li>Favourite Word is F (Part 1)</li>
-<li>Fear Of A Black Tenant</li>
-<li>Fisherman’s Friend</li>
-<li>Fiz Zong Haz Kno Tytal</li>
-<li>Flyonchildren</li>
-<li>Friends And Strangers</li>
+<li><a href="Album5.html">Favourite Word is F (Part 1)</a></li>
+<li><a href="Album3.html">Fear Of A Black Tenant</a></li>
+<li><a href="Album5.html">Fisherman’s Friend</a></li>
+<li><a href="Album5.html">Fiz Zong Haz Kno Tytal</a></li>
+<li><a href="Album3.html">Flyonchildren</a></li>
+<li><a href="Album1.html">Friends And Strangers</a></li>
 </ul>
 </div>
 
@@ -211,9 +251,9 @@ li::before {
 <div class="section">
 <h2>G</h2>
 <ul>
-<li>Ghetto Street Stuff</li>
-<li>Girl Called Sally</li>
-<li>Girl Won’t Even Notice (She Smells Bad)</li>
+<li><a href="Album8.html">Ghetto Street Stuff</a></li>
+<li><a href="Album2.html">Girl Called Sally</a></li>
+<li><a href="Album3.html">Girl Won’t Even Notice (She Smells Bad)</a></li>
 </ul>
 </div>
 
@@ -221,18 +261,18 @@ li::before {
 <div class="section">
 <h2>H</h2>
 <ul>
-<li>Here To A Special No Thanks Son Part One</li>
-<li>Here To A Special No Thank You Part Two</li>
-<li>Here To A Special No Thank Me Part Three</li>
-<li>Here To A Special No Thank Your Part Four</li>
-<li>Here To A Special No Thank My Part Five</li>
-<li>Here To A Special No Thank His Part Six</li>
-<li>Here To A Special Thank Heavens Part Seven</li>
-<li>Here To A Special No Thanks Mate Part Eight</li>
-<li>Here To A Special No Thank Mine Part Nine</li>
-<li>Here To A Special No Thanks Then Part Ten</li>
-<li>Homiez All Knowz Me</li>
-<li>House Of Lordz</li>
+<li><a href="Album1.html">Here To A Special No Thanks Son Part One</a></li>
+<li><a href="Album2.html">Here To A Special No Thank You Part Two</a></li>
+<li><a href="Album3.html">Here To A Special No Thank Me Part Three</a></li>
+<li><a href="Album4.html">Here To A Special No Thank Your Part Four</a></li>
+<li><a href="Album5.html">Here To A Special No Thank My Part Five</a></li>
+<li><a href="Album6.html">Here To A Special No Thank His Part Six</a></li>
+<li><a href="Album6.html">Here To A Special Thank Heavens Part Seven</a></li>
+<li><a href="Album7.html">Here To A Special No Thanks Mate Part Eight</a></li>
+<li><a href="Album7.html">Here To A Special No Thank Mine Part Nine</a></li>
+<li><a href="Album8.html">Here To A Special No Thanks Then Part Ten</a></li>
+<li><a href="Album5.html">Homiez All Knowz Me</a></li>
+<li><a href="Album7.html">House Of Lordz</a></li>
 </ul>
 </div>
 
@@ -240,11 +280,11 @@ li::before {
 <div class="section">
 <h2>I</h2>
 <ul>
-<li>I Don't Make No Erm-Ology</li>
-<li>I Will Never Never Surrender</li>
-<li>I’ll Get Mine In Yo’ Home</li>
-<li>In A Funny Way I Don’t Feel Sorry You’re Getting What You Served</li>
-<li>Injustice</li>
+<li><a href="Album7.html">I Don't Make No Erm-Ology</a></li>
+<li><a href="Album7.html">I Will Never Never Surrender</a></li>
+<li><a href="Album4.html">I’ll Get Mine In Yo’ Home</a></li>
+<li><a href="Album2.html">In A Funny Way I Don’t Feel Sorry You’re Getting What You Served</a></li>
+<li><a href="Album6.html">Injustice</a></li>
 </ul>
 </div>
 
@@ -252,7 +292,7 @@ li::before {
 <div class="section">
 <h2>J</h2>
 <ul>
-<li>Journey Through Da Lon-Town</li>
+<li><a href="Album4.html">Journey Through Da Lon-Town</a></li>
 </ul>
 </div>
 
@@ -260,9 +300,9 @@ li::before {
 <div class="section">
 <h2>K</h2>
 <ul>
-<li>Keep It Dark</li>
-<li>Know Tha Game</li>
-<li>Know Tha Game (Sir Rizz Mixx)</li>
+<li><a href="Album3.html">Keep It Dark</a></li>
+<li><a href="Album8.html">Know Tha Game</a></li>
+<li><a href="Album8.html">Know Tha Game (Sir Rizz Mixx)</a></li>
 </ul>
 </div>
 
@@ -270,8 +310,8 @@ li::before {
 <div class="section">
 <h2>L</h2>
 <ul>
-<li>Legend Of My Record Collection (Wickedest Selection)</li>
-<li>Like Those Lovely Girls Say</li>
+<li><a href="Album1.html">Legend Of My Record Collection (Wickedest Selection)</a></li>
+<li><a href="Album3.html">Like Those Lovely Girls Say</a></li>
 </ul>
 </div>
 
@@ -279,13 +319,13 @@ li::before {
 <div class="section">
 <h2>M</h2>
 <ul>
-<li>Man Of The Match</li>
-<li>May-Kit-Fun-Key</li>
-<li>Metaphors 4 Betta Scores</li>
-<li>Miss Understanding</li>
-<li>Motorway Man</li>
-<li>Music Of The World</li>
-<li>My Misses</li>
+<li><a href="Album6.html">Man Of The Match</a></li>
+<li><a href="Album2.html">May-Kit-Fun-Key</a></li>
+<li><a href="Album7.html">Metaphors 4 Betta Scores</a></li>
+<li><a href="Album1.html">Miss Understanding</a></li>
+<li><a href="Album3.html">Motorway Man</a></li>
+<li><a href="Album3.html">Music Of The World</a></li>
+<li><a href="Album3.html">My Misses</a></li>
 </ul>
 </div>
 
@@ -293,11 +333,11 @@ li::before {
 <div class="section">
 <h2>N</h2>
 <ul>
-<li>Nasty Iz Nicety</li>
-<li>Necessary Necessities</li>
-<li>Night-Mare Animal Instincts</li>
-<li>Nikki’s Nikkers</li>
-<li>Nothing Has Changed</li>
+<li><a href="Album2.html">Nasty Iz Nicety</a></li>
+<li><a href="Album6.html">Necessary Necessities</a></li>
+<li><a href="Album7.html">Night-Mare Animal Instincts</a></li>
+<li><a href="Album6.html">Nikki’s Nikkers</a></li>
+<li><a href="Album5.html">Nothing Has Changed</a></li>
 </ul>
 </div>
 
@@ -305,9 +345,9 @@ li::before {
 <div class="section">
 <h2>O</h2>
 <ul>
-<li>OCU4A3T YI8R12B</li>
-<li>Odds Are Stacked Against Me</li>
-<li>On The Beach Lies A Boy</li>
+<li><a href="Album2.html">OCU4A3T YI8R12B</a></li>
+<li><a href="Album6.html">Odds Are Stacked Against Me</a></li>
+<li><a href="Album2.html">On The Beach Lies A Boy</a></li>
 </ul>
 </div>
 
@@ -315,23 +355,15 @@ li::before {
 <div class="section">
 <h2>P</h2>
 <ul>
-<li>P Flex</li>
-<li>Pack Neva Stacks</li>
-<li>Phone Call Yall</li>
-<li>Placebo Pimp Hustlin’ Gangster</li>
-<li>Playtime</li>
-<li>Pointless Niggaz</li>
-<li>Projex In FX Iz PX</li>
-<li>Put On You Chocolate Stuff</li>
-<li>PX Reps</li>
-</ul>
-</div>
-
-<!-- Q -->
-<div class="section">
-<h2>Q</h2>
-<ul>
-<li>Queue Up All Y’all Pre-Funkadelics Peoples</li>
+<li><a href="Album1.html">P Flex</a></li>
+<li><a href="Album7.html">Pack Neva Stacks</a></li>
+<li><a href="Album4.html">Phone Call Yall</a></li>
+<li><a href="Album3.html">Placebo Pimp Hustlin’ Gangster</a></li>
+<li><a href="Album8.html">Playtime</a></li>
+<li><a href="Album4.html">Pointless Niggaz</a></li>
+<li><a href="Album7.html">Projex In FX Iz PX</a></li>
+<li><a href="Album5.html">Put On You Chocolate Stuff</a></li>
+<li><a href="Album6.html">PX Reps</a></li>
 </ul>
 </div>
 
@@ -339,10 +371,10 @@ li::before {
 <div class="section">
 <h2>R</h2>
 <ul>
-<li>Rappin’ Will Get You Nowhere On The Dancefloor</li>
-<li>Red Blue (Colour Me Funky)</li>
-<li>Renegades (featuring Project - X starring Cynthia & Debbie)</li>
-<li>Rizzio’s Rebirth</li>
+<li><a href="Album4.html">Rappin’ Will Get You Nowhere On The Dancefloor</a></li>
+<li><a href="Album7.html">Red Blue (Colour Me Funky)</a></li>
+<li><a href="Album6.html">Renegades (Project X)</a></li>
+<li><a href="Album1.html">Rizzio’s Rebirth</a></li>
 </ul>
 </div>
 
@@ -350,13 +382,13 @@ li::before {
 <div class="section">
 <h2>S</h2>
 <ul>
-<li>SABA And CKW</li>
-<li>Sho’ ’N’ ’Tel (Shona & Tallulah)</li>
-<li>Sir Rizz</li>
-<li>Six O’Clock</li>
-<li>So You Wanna Be A Boxer?</li>
-<li>Stiletto</li>
-<li>SuperRizzio (Save The Day!)</li>
+<li><a href="Album1.html">SABA And CKW</a></li>
+<li><a href="Album7.html">Sho’ ’N’ ’Tel (Shona & Tallulah)</a></li>
+<li><a href="Album4.html">Sir Rizz</a></li>
+<li><a href="Album4.html">Six O’Clock</a></li>
+<li><a href="Album7.html">So You Wanna Be A Boxer?</a></li>
+<li><a href="Album1.html">Stiletto</a></li>
+<li><a href="Album3.html">SuperRizzio (Save The Day!)</a></li>
 </ul>
 </div>
 
@@ -364,11 +396,11 @@ li::before {
 <div class="section">
 <h2>T</h2>
 <ul>
-<li>This Goes Out To The Lon-Town (featuring Project X)</li>
-<li>Tings And Stuff</li>
-<li>Tottenham</li>
-<li>Trajic Hour</li>
-<li>Tribute To Eddie Hazel</li>
+<li><a href="Album6.html">This Goes Out To The Lon-Town (Project X)</a></li>
+<li><a href="Album8.html">Tings And Stuff</a></li>
+<li><a href="Album2.html">Tottenham</a></li>
+<li><a href="Album5.html">Trajic Hour</a></li>
+<li><a href="Album1.html">Tribute To Eddie Hazel</a></li>
 </ul>
 </div>
 
@@ -376,10 +408,10 @@ li::before {
 <div class="section">
 <h2>U</h2>
 <ul>
-<li>U Get Me</li>
-<li>U No U Could B Good 2 U</li>
-<li>Undercover Business</li>
-<li>Untitled</li>
+<li><a href="Album8.html">U Get Me</a></li>
+<li><a href="Album5.html">U No U Could B Good 2 U</a></li>
+<li><a href="Album2.html">Undercover Business</a></li>
+<li><a href="Album6.html">Untitled</a></li>
 </ul>
 </div>
 
@@ -387,9 +419,9 @@ li::before {
 <div class="section">
 <h2>V</h2>
 <ul>
-<li>V Riddla</li>
-<li>Vinyl Vs C.D.</li>
-<li>Vitamin F (Part 2)</li>
+<li><a href="Album4.html">V Riddla</a></li>
+<li><a href="Album5.html">Vinyl Vs C.D.</a></li>
+<li><a href="Album5.html">Vitamin F (Part 2)</a></li>
 </ul>
 </div>
 
@@ -397,11 +429,11 @@ li::before {
 <div class="section">
 <h2>W</h2>
 <ul>
-<li>Wanted</li>
-<li>Wanton Streak</li>
-<li>We’re Glad You’re Here</li>
-<li>What A Difference A Day Makes</li>
-<li>Who Da Baddest</li>
+<li><a href="Album8.html">Wanted</a></li>
+<li><a href="Album5.html">Wanton Streak</a></li>
+<li><a href="Album4.html">We’re Glad You’re Here</a></li>
+<li><a href="Album2.html">What A Difference A Day Makes</a></li>
+<li><a href="Album8.html">Who Da Baddest</a></li>
 </ul>
 </div>
 
@@ -409,7 +441,7 @@ li::before {
 <div class="section">
 <h2>X</h2>
 <ul>
-<li>X-Rated</li>
+<li><a href="Album3.html">X-Rated</a></li>
 </ul>
 </div>
 
@@ -417,10 +449,10 @@ li::before {
 <div class="section">
 <h2>Y</h2>
 <ul>
-<li>Ya Know Tha Drill</li>
-<li>You Don’t Know Me</li>
-<li>You Scared Me Baby</li>
-<li>You’re Goin’ Down You Slagg</li>
+<li><a href="Album4.html">Ya Know Tha Drill</a></li>
+<li><a href="Album8.html">You Don’t Know Me</a></li>
+<li><a href="Album2.html">You Scared Me Baby</a></li>
+<li><a href="Album8.html">You’re Goin’ Down You Slagg</a></li>
 </ul>
 </div>
 
@@ -428,12 +460,7 @@ li::before {
 <div class="section">
 <h2>Z</h2>
 <ul>
-<li>Zany Maniac</li>
-<li>Zzzzzz (Interlude)</li>
+<li><a href="Album5.html">Zany Maniac</a></li>
+<li><a href="Album3.html">Zzzzzz (Interlude)</a></li>
 </ul>
 </div>
-
-</div>
-
-</body>
-</html>
