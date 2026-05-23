@@ -139,7 +139,7 @@ a:active {
 </head>
 
 <body>
-<link rel="icon" type="image/jpeg" href="./images/discography-icon.jpg?v=2">
+
 <header>
 <nav>
 <a href="index.html">Home</a>
@@ -464,3 +464,17 @@ a:active {
 <li><a href="Album3.html">Zzzzzz (Interlude)</a></li>
 </ul>
 </div>
+    
+<!-- DYNAMIC FAVICON INJECTION SCRIPT -->
+<script>
+    (function() {
+        var link = document.createElement('link');
+        link.rel = 'icon';
+        link.type = 'image/jpeg';
+        link.href = './images/discography-icon.jpg';
+        document.head.appendChild(link);
+    })();
+</script>
+
+</body>
+</html>
