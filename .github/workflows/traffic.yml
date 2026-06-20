@@ -1,0 +1,19 @@
+name: Save GitHub Traffic Data Daily
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs automatically every night at midnight UTC
+  workflow_dispatch: # Allows you to manually click a button to run it anytime
+
+jobs:
+  run-traffic-collector:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Fetch and record traffic data
+        uses: sangonzal/repository-traffic-action@v0.2.0
+        env:
+          API_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+          STATIC_IMAGE_GENERATION: "true"
