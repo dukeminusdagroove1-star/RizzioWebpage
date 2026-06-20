@@ -9,11 +9,15 @@ jobs:
   run-traffic-collector:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository code
         uses: actions/checkout@v4
 
-      - name: Fetch and record traffic data
-        uses: sangonzal/repository-traffic-action@v1
+      - name: Fetch traffic metrics
+        uses: jasonetco/create-an-issue@v2
         env:
-          API_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
-          STATIC_IMAGE_GENERATION: "true"
+          GITHUB_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+
+      - name: GitHub Repo Stats
+        uses: gayanvoice/github-stats-action@v1
+        with:
+          token: ${{ secrets.TRAFFIC_TOKEN }}
