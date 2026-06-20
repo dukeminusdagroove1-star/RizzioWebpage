@@ -12,21 +12,53 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Fetch and Save Traffic Data
+      - name: Fetch, Merge, and Clean Traffic Data
         env:
           GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
         run: |
           mkdir -p traffic
           
-          # Fetch views and clones using GitHub's native CLI tool
-          gh api repos/${{ github.repository }}/traffic/views > traffic/raw_views.json
-          gh api repos/${{ github.repository }}/traffic/clones > traffic/raw_clones.json
+          # Fetch the latest rolling 14-day data from GitHub
+          gh api repos/${{ github.repository }}/traffic/views > new_views.json
           
-          # Configure Git to commit the files back to your repository
+          # Run a python script to merge data and remove duplicates permanently
+          python3 -c "
+          import json, os
+          
+          # Load existing file or start fresh
+          existing_data = {'count': 0, 'uniques': 0, 'views': []}
+          if os.path.exists('traffic/raw_views.json'):
+              with open('traffic/raw_views.json', 'r') as f:
+                  existing_data = json.load(f)
+          
+          # Load new incoming data
+          with open('new_views.json', 'r') as f:
+              new_data = json.load(f)
+          
+          # Use a dictionary to overwrite duplicate timestamps with latest data
+          merged_views = {v['timestamp']: v for v in existing_data.get('views', [])}
+          for v in new_data.get('views', []):
+              merged_views[v['timestamp']] = v
+          
+          # Sort everything cleanly by date layout
+          sorted_views = sorted(merged_views.values(), key=lambda x: x['timestamp'])
+          
+          # Update overall totals
+          total_count = sum(v['count'] for v in sorted_views)
+          total_uniques = sum(v['uniques'] for v in sorted_views)
+          
+          output = {'count': total_count, 'uniques': total_uniques, 'views': sorted_views}
+          
+          # Save file with perfect indentations (no more squished text)
+          with open('traffic/raw_views.json', 'w') as f:
+              json.dump(output, f, indent=2)
+          "
+          
+          # Push clean data back to repository
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@://github.com"
-          
-          git add traffic/
-          git commit -m "Update daily traffic logs [skip ci]" || echo "No changes to commit"
+          git add traffic/raw_views.json
+          git commit -m "Clean and update daily traffic logs [skip ci]" || echo "No changes"
           git push
+
 
