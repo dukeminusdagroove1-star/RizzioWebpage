@@ -2,22 +2,31 @@ name: Save GitHub Traffic Data Daily
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs automatically every night at midnight UTC
-  workflow_dispatch: # Allows you to manually click a button to run it anytime
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   run-traffic-collector:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Fetch traffic metrics
-        uses: jasonetco/create-an-issue@v2
+      - name: Fetch and Save Traffic Data
         env:
-          GITHUB_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+          GH_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+        run: |
+          mkdir -p traffic
+          
+          # Fetch views and clones using GitHub's native CLI tool
+          gh api repos/${{ github.repository }}/traffic/views > traffic/raw_views.json
+          gh api repos/${{ github.repository }}/traffic/clones > traffic/raw_clones.json
+          
+          # Configure Git to commit the files back to your repository
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@://github.com"
+          
+          git add traffic/
+          git commit -m "Update daily traffic logs [skip ci]" || echo "No changes to commit"
+          git push
 
-      - name: GitHub Repo Stats
-        uses: gayanvoice/github-stats-action@v1
-        with:
-          token: ${{ secrets.TRAFFIC_TOKEN }}
