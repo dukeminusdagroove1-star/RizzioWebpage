@@ -101,6 +101,55 @@
         .content td a:hover { text-decoration: underline; }
         .date { color: #aaa; font-size: 0.92em; }
         .method-note { margin-top: 24px; color: #c9c9c9; font-size: 14px; }
+
+        /* Continuous icon animation: subtle gold glow, knowing tilt, and orbit */
+        #women > svg.women-icon {
+            /* The artwork occupies about 100 of the 120 viewBox units;
+               96px makes the actual illustration about 80px tall/wide. */
+            width: 96px;
+            height: 96px;
+            cursor: pointer;
+            overflow: visible;
+            transform-origin: 50% 50%;
+            animation: women-icon-tilt 5s ease-in-out infinite,
+                       women-icon-glow 3.2s ease-in-out infinite;
+        }
+        #women > svg.women-icon .women-orbit {
+            opacity: .75;
+            transform-origin: 60px 60px;
+            pointer-events: none;
+            animation: women-gold-orbit 8s linear infinite;
+        }
+        #women > svg.women-icon circle[stroke="#d4af37"] {
+            animation: women-earring-glint 2.8s ease-in-out infinite;
+        }
+        @keyframes women-icon-tilt {
+            0%, 82%, 100% { transform: rotate(0deg) scale(1); }
+            20% { transform: rotate(-3deg) scale(1.025); }
+            42% { transform: rotate(3deg) scale(1.035); }
+            62% { transform: rotate(-1.5deg) scale(1.015); }
+        }
+        @keyframes women-icon-glow {
+            0%, 100% { filter: drop-shadow(0 0 2px rgba(212,175,55,.25)); }
+            50% { filter: drop-shadow(0 0 6px rgba(212,175,55,.8)) drop-shadow(0 0 13px rgba(212,175,55,.35)); }
+        }
+        @keyframes women-gold-orbit {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes women-earring-glint {
+            0%, 100% { stroke: #d4af37; }
+            50% { stroke: #fff0a6; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            #women > svg.women-icon,
+            #women > svg.women-icon .women-orbit,
+            #women > svg.women-icon circle[stroke="#d4af37"] {
+                animation: none !important;
+                filter: none !important;
+            }
+        }
+
 </style>
 </head>
 <body>
@@ -122,26 +171,23 @@
 <div class="container">
 <div class="title">RIZZIO <span>WOMEN</span></div>
 <div class="content"><h2 id="women">
-<svg viewBox="0 0 80 80" role="img" aria-label="Brown-skinned woman icon" style="width:88px;height:88px;display:block;">
-<path d="M40 6C26 6 14 14 14 26C8 29 6 40 12 48C10 62 22 70 40 70C58 70 70 62 68 48C74 40 72 29 66 26C66 14 54 6 40 6Z" fill="#141414"/>
-<circle cx="40" cy="40" r="16" fill="#8b5a2b"/>
-<rect x="32" y="54" width="16" height="10" fill="#8b5a2b"/>
-<rect x="20" y="62" width="40" height="16" rx="8" fill="#5a381b"/>
-<circle cx="24" cy="40" r="4" fill="#8b5a2b"/>
-<circle cx="56" cy="40" r="4" fill="#8b5a2b"/>
-<circle cx="24" cy="46" r="6" fill="none" stroke="#d4af37" stroke-width="2.5"/>
-<circle cx="56" cy="46" r="6" fill="none" stroke="#d4af37" stroke-width="2.5"/>
-<circle cx="34" cy="38" r="2.5" fill="#000"/>
-<circle cx="46" cy="38" r="2.5" fill="#000"/>
-<path d="M30 34Q34 32 38 34" stroke="#000" stroke-width="2" fill="none"/>
-<path d="M42 34Q46 32 50 34" stroke="#000" stroke-width="2" fill="none"/>
-<path d="M40 38Q39 42 40 44" stroke="#3b2412" stroke-width="2" fill="none"/>
-<path d="M32 50Q40 54 48 50" stroke="#2b180c" stroke-width="2.5" fill="none"/>
+<svg aria-label="Brown-skinned woman icon with continuous gold animation" class="women-icon" height="96" role="img" style="vertical-align: middle; margin-right: 12px;" viewbox="0 0 120 120" width="96" tabindex="0">
+<path d="M60 10 C40 10, 22 22, 22 40 C12 45, 10 60, 20 70 C18 90, 35 100, 60 100 C85 100, 102 90, 100 70 C110 60, 108 45, 98 40 C98 22, 80 10, 60 10Z" fill="#141414"></path>
+<circle cx="60" cy="60" fill="#8b5a2b" r="22"></circle>
+<rect fill="#8b5a2b" height="14" width="16" x="52" y="78"></rect>
+<rect fill="#5a381b" height="20" rx="10" width="50" x="35" y="90"></rect>
+<circle cx="38" cy="60" fill="#8b5a2b" r="5"></circle>
+<circle cx="82" cy="60" fill="#8b5a2b" r="5"></circle>
+<circle cx="38" cy="68" fill="none" r="7" stroke="#d4af37" stroke-width="3"></circle>
+<circle cx="82" cy="68" fill="none" r="7" stroke="#d4af37" stroke-width="3"></circle>
+<circle cx="52" cy="58" fill="#000" r="3"></circle>
+<circle cx="68" cy="58" fill="#000" r="3"></circle>
+<path d="M46 52 Q52 50 58 52" fill="none" stroke="#000" stroke-width="2"></path>
+<path d="M62 52 Q68 50 74 52" fill="none" stroke="#000" stroke-width="2"></path>
+<path d="M60 58 Q59 64 60 66" fill="none" stroke="#3b2412" stroke-width="2"></path>
+<path d="M50 72 Q60 76 70 72" fill="none" stroke="#2b180c" stroke-width="2.5"></path>
+<circle class="women-orbit" cx="60" cy="60" r="54" fill="none" stroke="#d4af37" stroke-width="1.8" stroke-dasharray="18 8 3 8" />
 </svg>
-
-
-
-
   Named Women — Chronological Index
 </h2>
 <p>This index follows the numbered Rizzio catalogue in track order (001–125). The track number is the primary chronology; album release or writing periods can overlap, particularly in the Project X era. Each entry distinguishes an explicitly named person from a title-pun, rhyme, cultural reference, vocal cue or later callback.</p>
@@ -772,5 +818,37 @@ PROJECT X — THE AMERICANS SET THE FOUNDATION<br/><span class="date">Jul 1995�
 </tr>
 </table>
 <p class="method-note"><strong>Reading rule:</strong> a title or rhyme can precede a character’s fuller appearance. For example, “Miss Understanding” is a title at #008, but the relationship character is described at #040; “Ruth” rhymes with “truth” at #032, while the first clear named-woman scene is #044. These distinctions are kept rather than collapsed into a single retrospective story.</p>
-</div></div></body>
+</div></div>
+<script>
+(() => {
+    const icon = document.querySelector('#women > svg.women-icon');
+    if (!icon) return;
+    const animateIcon = () => {
+        icon.classList.remove('is-animating');
+        void icon.getBoundingClientRect();
+        icon.classList.add('is-animating');
+        window.setTimeout(() => icon.classList.remove('is-animating'), 900);
+    };
+    icon.addEventListener('click', animateIcon);
+    icon.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            animateIcon();
+        }
+    });
+})();
+</script>
+</div>
+<footer>
+    <h1 style="color:#CD7F32; margin: 0 0 6px; font-size: 28px; letter-spacing: 0.06em;
+               text-shadow: 0 0 12px rgba(255,255,255,0.08);">
+        Rizzio<span class="tm-adjust">™</span>
+    </h1>
+
+    <p style="font-family: sans-serif; font-size: 14px; font-weight: 400;
+              color: #707070; letter-spacing: 0.2px; margin: 0;">
+        © 2025 — Catalogic Universe
+</p>
+</footer>
+</body>
 </html>
