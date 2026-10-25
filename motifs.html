@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rizzio — Motifs</title>
+<link rel="icon" type="image/jpeg" href="./images/motifs-icon.jpg">
+<style>
+:root {
+    --bg: #050508;
+    --fg: #f5f5f5;
+    --accent: #d4af37;
+    --muted: #999;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #151520 0, #050508 45%, #000 100%);
+    color: var(--fg);
+}
+
+header {
+    padding: 28px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(14px);
+    background: rgba(5,5,8,0.9);
+    z-index: 10;
+}
+
+nav a {
+    margin-right: 20px;
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+.title {
+    font-size: clamp(32px, 5vw, 48px);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.title span {
+    color: var(--accent);
+}
+
+.content {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #e0e0e0;
+}
+
+/* REFINED TABLE STYLE */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    background: rgba(12,12,20,0.6);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background: rgba(212,175,55,0.08);
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 13px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(212,175,55,0.35);
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 14px;
+    vertical-align: top;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: rgba(212,175,55,0.05);
+}
+
+footer {
+    margin-top: 80px;
+    padding: 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Hashtag track-number visibility amendment only */
+a[href*="discography.html#track-"] {
+    color: #B69EFF;
+    text-decoration-color: currentColor;
+}
+a[href*="discography.html#track-"]:focus,
+a[href*="discography.html#track-"]:active {
+    color: #999;
+}
+</style>
+
+<style>
+/* Integrated animated emblem: motifs */
+/* Resize SVG container */
+.motif-animated {
+    width: 96px;
+    height: 96px;
+    display: block;
+}
+
+/* Outer gold ring movement */
+@keyframes moveOuter {
+    0%   { transform: translate(0px, 0px); }
+    25%  { transform: translate(4px, -3px); }
+    50%  { transform: translate(-4px, 3px); }
+    75%  { transform: translate(3px, 4px); }
+    100% { transform: translate(0px, 0px); }
+}
+
+/* Left brown ring movement */
+@keyframes moveLeft {
+    0%   { transform: translate(0px, 0px); }
+    25%  { transform: translate(-5px, 2px); }
+    50%  { transform: translate(3px, -4px); }
+    75%  { transform: translate(-2px, 5px); }
+    100% { transform: translate(0px, 0px); }
+}
+
+/* Right brown ring movement */
+@keyframes moveRight {
+    0%   { transform: translate(0px, 0px); }
+    25%  { transform: translate(5px, -2px); }
+    50%  { transform: translate(-3px, 4px); }
+    75%  { transform: translate(2px, -5px); }
+    100% { transform: translate(0px, 0px); }
+}
+
+.motif-animated .outer-ring {
+    animation: moveOuter 4s infinite ease-in-out;
+    transform-origin: center;
+}
+
+.motif-animated .left-ring {
+    animation: moveLeft 3.2s infinite ease-in-out;
+    transform-origin: center;
+}
+
+.motif-animated .right-ring {
+    animation: moveRight 2.8s infinite ease-in-out;
+    transform-origin: center;
+}
+</style>
+</head>
+
+<body>
+<header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="bio.html">Bio</a>
+    <a href="discography.html">Discography</a>
+    <a href="albums.html">Albums</a>
+    <a href="personas.html">Personas</a>
+    <a href="motifs.html">Motifs</a>
+    <a href="numerology.html">Numerology</a>
+    <a href="women.html">Women</a>
+    <a href="manifesto.html">Manifesto</a>
+    <a href="crew.html">Crew</a>
+    <a href="themes.html">Themes & Geographical</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="title">RIZZIO <span>MOTIFS</span></div>
+
+<div class="content">
+
+<svg width="96" height="96" viewBox="0 0 80 80" role="img" aria-label="Rizzio motifs emblem" class="motif-animated">
+
+    <!-- Background -->
+    <rect width="80" height="80" fill="#000"/>
+
+    <!-- Outer gold ring -->
+    <circle cx="40" cy="40" r="28"
+            fill="none"
+            stroke="#d4af37"
+            stroke-width="2.5"
+            class="outer-ring" />
+
+    <!-- Left brown ring -->
+    <circle cx="32" cy="40" r="14"
+            fill="none"
+            stroke="#5c3a21"
+            stroke-width="2"
+            class="left-ring" />
+
+    <!-- Right brown ring -->
+    <circle cx="48" cy="40" r="14"
+            fill="none"
+            stroke="#5c3a21"
+            stroke-width="2"
+            class="right-ring" />
+
+</svg>
+
+<p>This registry collates recurring images, phrases, narrative mechanisms and structural habits across the complete 125-track chronology. A motif can recur as an exact phrase, return in a changed form, or develop into a larger organising device. The entries below distinguish documented repetitions from broader interpretive patterns; a connection is not treated as canon merely because two things can be made to resemble one another.</p>
+
+<table>
+<tr>
+<th>Motif</th>
+<th>Category</th>
+<th>Recurrence Type</th>
+<th>Structural Function / Track Evidence</th>
+</tr>
+<tr><td>“Here To A Special No Thanks” family</td><td>Album architecture</td><td>Numbered sequence / recurring frame</td><td>Tracks 014, 028, 043, 057, 074–075, 091–092, 108 and 125 use variations of the title. These pieces are not interchangeable bonus tracks: they can recap an era, parody a formal sign-off, provide a round-up, or frame a transition. Parts Six and Eight also sit at the start of their album groupings, complicating a simple “every album ends here” rule.</td></tr>
+<tr><td>“Know Tha Game”</td><td>Doctrine / strategy</td><td>Exact title return and remix</td><td>Track 113 establishes the phrase as a survival lesson in a hostile social environment; track 120 revisits it as the “Sir Rizz Mixx.” The return shifts the phrase from collective Project X statement toward Rizzio’s own branded presentation, while preserving the idea that knowing the rules matters.</td></tr>
+<tr><td>“C Da Real”</td><td>Reality / credibility</td><td>Title reprise across the final era</td><td>Track 114 is followed by track 121, “C Da Real Pt 2.” The phrase becomes a bridge between the Project X album sequence and the 2097 EP. Its meaning should be read through each lyric, not assumed to be identical merely because the title returns.</td></tr>
+<tr><td>Cards, odds and calculated risk</td><td>Games / strategy</td><td>Image cluster across eras</td><td>“Stiletto” (#<a href="discography.html#track-007">007</a>) uses rolling dice and a blood-price image; “Odds Are Stacked Against Me” (#<a href="discography.html#track-088">088</a>) makes unfair probability explicit; “Dicey” (#<a href="discography.html#track-100">100</a>) centres a gambling/card vocabulary; “Know Tha Game” (#<a href="discography.html#track-113">113</a>, #<a href="discography.html#track-120">120</a>), “C Da Real” (#<a href="discography.html#track-114">114</a>) and “Playtime” (#<a href="discography.html#track-115">115</a>) continue the language of risk, judgement and winning. The motif develops from threat and disadvantage into a crew’s strategic code.</td></tr>
+<tr><td>Project X as Spades; diamonds, pearls and the queen</td><td>Card / character symbolism</td><td>Connected symbolic system</td><td>“Playtime” (#<a href="discography.html#track-115">115</a>) explicitly places girls, pearls and black diamonds together; the wider canon assigns Project X to Spades, Pearl to pearl imagery, Dicey to purple and Queen to the queen of hearts. Read these as distinct assignments within a shared card-world—not as interchangeable symbols. The Queen/Dicey businesses and vehicle imagery belong to the established visual canon, even where a lyric does not restate every detail.</td></tr>
+<tr><td>“Freak of the week” / freak language</td><td>Sexual persona / catchphrase</td><td>Repeated phrase family</td><td>The phrase family recurs across the archive, including the early sexual-comedy material and later tracks. It works as a boast, a category for the week’s pursuit, and a deliberately exaggerated performance identity. Individual uses can change tone; repetition alone does not mean every “freak” is the same character.</td></tr>
+<tr><td>“I’ll get mine in yo’ home”</td><td>Home / territorial boast</td><td>Title phrase and recurring home imagery</td><td>Track 045 gives the phrase its clearest statement. Elsewhere, home, the crib, partners and domestic space recur as settings where public swagger meets private life—for example “Friends And Strangers” (#<a href="discography.html#track-003">003</a>), “We’re Glad You’re Here” (#<a href="discography.html#track-046">046</a>) and “In The Dead Of Night” (#<a href="discography.html#track-123">123</a>). The home can be refuge, relationship space or the target of an intrusion; context decides which.</td></tr>
+<tr><td>Named women and relationship episodes</td><td>Character / desire</td><td>Recurring narrative pattern; individual names remain distinct</td><td>“Friends And Strangers” (#<a href="discography.html#track-003">003</a>), “Girl Called Sally” (#<a href="discography.html#track-015">015</a>), “What A Difference A Day Makes” (#<a href="discography.html#track-019">019</a>), “You Scared Me Baby” (#<a href="discography.html#track-024">024</a>), “My Misses” (#<a href="discography.html#track-040">040</a>), “Six O’Clock” (#<a href="discography.html#track-051">051</a>), “Nikki’s Nikkers” (#<a href="discography.html#track-080">080</a>), and “You Don’t Know Me” (#<a href="discography.html#track-124">124</a>) approach attraction, intimacy, embarrassment or mistrust from different angles. Sally is a named episode, not automatically a single woman appearing in every relationship song.</td></tr>
+<tr><td>Bravado versus vulnerability</td><td>Character / emotional contrast</td><td>Recurring contrast</td><td>The boastful seducer is repeatedly unsettled by ordinary emotional or social consequences. “Friends And Strangers” (#<a href="discography.html#track-003">003</a>) begins with affection after work; “Girl Called Sally” (#<a href="discography.html#track-015">015</a>) turns a chance meeting into a complicated encounter; “You Scared Me Baby” (#<a href="discography.html#track-024">024</a>) centres fear; “My Misses” (#<a href="discography.html#track-040">040</a>) separates public fidelity claims from private behaviour; “You Don’t Know Me” (#<a href="discography.html#track-124">124</a>) performs toughness while describing reputation. The tension is a recurring dramatic engine, not proof that the narrator is always autobiographical.</td></tr>
+<tr><td>“Miss” wordplay and linguistic fragmentation</td><td>Wordplay / naming</td><td>Cluster of deliberately constructed names</td><td>The archive contains the “Miss Lay,” “Miss Use” and “Miss Take” wordplay cluster. The joke turns the prefix “mis-” into a catalogue of sexual or social types. Treat the wordplay as a designed language device; do not infer a continuous character arc unless a track explicitly connects the names.</td></tr>
+<tr><td>Six o’clock / waiting and timing</td><td>Time / expectation</td><td>Named temporal marker</td><td>“Six O’Clock” (#<a href="discography.html#track-051">051</a>) makes the time itself the title and centre of the episode. Its motif value lies in the tension between an expected moment and what actually happens. It is a specific temporal cue, not a universal code for every later return unless another track supplies the link.</td></tr>
+<tr><td>Tottenham / Lon-Town as identity</td><td>Place / belonging</td><td>Repeated geographical signature</td><td>“Close To The Borderline” (#<a href="discography.html#track-001">001</a>) places the opening in Tottenham High Road; “Tottenham” (#<a href="discography.html#track-018">018</a>) gives N15 an explicit social and personal context; “Journey Through Da Lon-Town” (#<a href="discography.html#track-048">048</a>), “Aroundaway” (#<a href="discography.html#track-068">068</a>, #<a href="discography.html#track-073">073</a>), “This Goes Out To The Lon-Town” (#<a href="discography.html#track-077">077</a>) and the 2097 sequence (#<a href="discography.html#track-121">121</a>–<a href="discography.html#track-125">125</a>) return to local identity. Place names can be literal, social shorthand or myth-making, depending on the lyric.</td></tr>
+<tr><td>Journeys, roads and movement through the city</td><td>Movement / narrative geography</td><td>Route and travel pattern</td><td>“Down The Boulevard” (#<a href="discography.html#track-010">010</a>), “Motorway Man” (#<a href="discography.html#track-036">036</a>), “Journey Through Da Lon-Town” (#<a href="discography.html#track-048">048</a>), “Aroundaway” (#<a href="discography.html#track-068">068</a>, #<a href="discography.html#track-073">073</a>) and the later Tottenham/Lon-Town material make movement a narrative device. Roads can enable cruising, escape, encounter or a tour through the narrator’s world; the tracks should be read for their actual route rather than forced into one continuous itinerary.</td></tr>
+<tr><td>Street pressure and unequal odds</td><td>Social commentary</td><td>Recurring condition / changed register</td><td>“Miss Understanding” (#<a href="discography.html#track-008">008</a>), “Fear Of A Black Tenant” (#<a href="discography.html#track-032">032</a>), “Keep It Dark” (#<a href="discography.html#track-038">038</a>), “Desperate Times” (#<a href="discography.html#track-112">112</a>), “Injustice” (#<a href="discography.html#track-087">087</a>) and “Odds Are Stacked Against Me” (#<a href="discography.html#track-088">088</a>) address danger, exclusion, policing, poverty or unequal chances in different ways. This strand is not simply the same as the comic boasts: it supplies a harder social environment against which the characters operate.</td></tr>
+<tr><td>Game, contest and performance</td><td>Competition / spectacle</td><td>Repeated metaphor system</td><td>“Can I Be A Good Boy?” (#<a href="discography.html#track-009">009</a>), “Bbrand Nnew Pplayer” (#<a href="discography.html#track-026">026</a>), “Man Of The Match” (#<a href="discography.html#track-089">089</a>), “So You Wanna Be A Boxer?” (#<a href="discography.html#track-093">093</a>), “Know Tha Game” (#<a href="discography.html#track-113">113</a>, #<a href="discography.html#track-120">120</a>) and “Playtime” (#<a href="discography.html#track-115">115</a>) frame identity as a test, contest, match or game. The metaphor can mean seduction, survival, sport, music-making or social calculation; its local context determines the rules.</td></tr>
+<tr><td>Alias, self-invention and the Rizzio name</td><td>Identity / persona</td><td>Rebirth, title and alias returns</td><td>“Rizzio’s Rebirth” (#<a href="discography.html#track-005">005</a>), “SuperRizzio (Save The Day!)” (#<a href="discography.html#track-035">035</a>), “Sir Rizz” (#<a href="discography.html#track-056">056</a>), “Projex In FX Iz PX” (#<a href="discography.html#track-101">101</a>) and “Know Tha Game (Sir Rizz Mixx)” (#<a href="discography.html#track-120">120</a>) stage identity as something named, performed and reintroduced. Steven is the foundational character in the canon; Rizzio and Sir Rizz are not interchangeable with every other character or with the Project X collective.</td></tr>
+<tr><td>Radio, telephone and mediated voices</td><td>Communication / broadcast</td><td>Recurring device and framing</td><td>“SABA And CKW” (#<a href="discography.html#track-006">006</a>) uses a phone call to organise the social scene; “End Of The World (Not The)” (#<a href="discography.html#track-027">027</a>) repeats listening to the radio; “Phone Call Yall” (#<a href="discography.html#track-049">049</a>) makes the call central; “House Of Lordz” (#<a href="discography.html#track-095">095</a>) invokes a tape recorder and public address; “Bad Lyrics” (#<a href="discography.html#track-109">109</a>) opens with a narrated introduction. Calls, broadcasts and announcements let the world enter the track and turn private speech into public performance.</td></tr>
+<tr><td>Music-making, record collecting and source lineage</td><td>Funk / creative process</td><td>Self-referential musical thread</td><td>“Legend Of My Record Collection (Wickedest Selection)” (#<a href="discography.html#track-011">011</a>), “Tribute To Eddie Hazel” (#<a href="discography.html#track-012">012</a>), “OCU4A3T YI8R12B” (#<a href="discography.html#track-023">023</a>), “X-Rated” (#<a href="discography.html#track-041">041</a>), “Queue Up All Y’all Pre-Funkadelics Peoples” (#<a href="discography.html#track-050">050</a>) and “Vinyl Vs C.D” (#<a href="discography.html#track-066">066</a>) make records, musicians, studio work and format part of the subject. The listed re-creations across the albums are also part of this source-conscious method: the reference is often structural or musical, not merely a name-check.</td></tr>
+<tr><td>Funk as atmosphere and physical force</td><td>Musical / bodily</td><td>Repeated sensory vocabulary</td><td>Tracks such as “Amplifier Fire” (#<a href="discography.html#track-002">002</a>), “May-Kit-Fun-Key” (#<a href="discography.html#track-016">016</a>), “Music Of The World” (#<a href="discography.html#track-029">029</a>), “Big Booty Bitches, Slutty Slags And Horny Hoes” (#<a href="discography.html#track-044">044</a>), “Can’t Stay Away” (#<a href="discography.html#track-058">058</a>) and “Red Blue (Colour Me Funky)” (#<a href="discography.html#track-099">099</a>) connect funk to heat, movement, bodies and showmanship. The pseudo-live framing of “COMIN’ ROUNDA MOUNTAIN” begins with “Can’t Stay Away” and is rounded off by the crowd-facing “Here To A Special No Thank My Part Five” (#<a href="discography.html#track-074">074</a>); that framing does not mean every song on the album contains crowd participation.</td></tr>
+<tr><td>Comedy, parody and deliberately misshapen language</td><td>Wordplay / comic voice</td><td>Persistent stylistic method</td><td>“May-Kit-Fun-Key” (#<a href="discography.html#track-016">016</a>), “OCU4A3T YI8R12B” (#<a href="discography.html#track-023">023</a>), “Fiz Zong Haz Kno Tytal” (#<a href="discography.html#track-052">052</a>), “PX Reps” (#<a href="discography.html#track-083">083</a>), “Confucius Says” (#<a href="discography.html#track-104">104</a>) and “I Don’t Make No Erm-Ology” (#<a href="discography.html#track-105">105</a>) use phonetic spelling, puns, malapropism or mock-serious language. The spelling is often part of the joke and rhythm; silently standardising it would erase evidence.</td></tr>
+<tr><td>Colours and visual coding</td><td>Colour / character design</td><td>Explicit title plus established visual canon</td><td>“Red Blue (Colour Me Funky)” (#<a href="discography.html#track-099">099</a>) foregrounds colour in its title and imagery. In the wider canon Rizzio is green and Dicey purple; these assignments should remain precise rather than be treated as a general colour palette. A colour becomes a meaningful recurring code when the artwork, character assignment or lyric supports it.</td></tr>
+<tr><td>Animal instinct, predator and prey</td><td>Threat / survival metaphor</td><td>Image cluster</td><td>“Night-Mare Animal Instincts” (#<a href="discography.html#track-094">094</a>) foregrounds instinct and animality; “Bangin’” (#<a href="discography.html#track-117">117</a>) opens with a narrated description of predators and prey before the track’s own performance. This creates a frame of struggle and role-adaptation. It should not be assumed that every animal reference belongs to this same system.</td></tr>
+<tr><td>Combat, sport and winner language</td><td>Conflict / achievement</td><td>Cross-domain metaphor</td><td>“So You Wanna Be A Boxer?” (#<a href="discography.html#track-093">093</a>), “Metaphors 4 Betta Scores” (#<a href="discography.html#track-096">096</a>), “Man Of The Match” (#<a href="discography.html#track-089">089</a>), “C Da Real Pt 2” (#<a href="discography.html#track-121">121</a>, with Tekken and Street Fighter references) and “You’re In The Army Now” (#<a href="discography.html#track-122">122</a>) draw on sport, fighting or military strategy. These references supply different models of competition; they are related by the contest motif, not a single literal storyline.</td></tr>
+<tr><td>Money, investment and the business vocabulary of desire</td><td>Commerce / seduction</td><td>Repeated economic metaphor</td><td>“Amplifier Fire” (#<a href="discography.html#track-002">002</a>) starts from payday and getting money; “Undercover Business” (#<a href="discography.html#track-020">020</a>) frames an illicit transaction; “Playtime” (#<a href="discography.html#track-115">115</a>) puts money beside cars, women and luxury; “U Get Me” (#<a href="discography.html#track-116">116</a>) foregrounds cash and fresh gear; “Comin’ 4 U” (#<a href="discography.html#track-081">081</a>) uses capital and collateral language. Money can be literal, criminal, aspirational or a joke about turning attraction into a transaction.</td></tr>
+<tr><td>Disguise, reputation and being misread</td><td>Public identity / deception</td><td>Recurring contrast between appearance and reality</td><td>“What A Difference A Day Makes” (#<a href="discography.html#track-019">019</a>), “Placebo Pimp Hustlin’ Gangster” (#<a href="discography.html#track-039">039</a>), “Wanted” (#<a href="discography.html#track-082">082</a>), “Defy The Laws Of Physics” (#<a href="discography.html#track-097">097</a>), “Sho’ ’N’ ’Tel” (#<a href="discography.html#track-103">103</a>) and “You Don’t Know Me” (#<a href="discography.html#track-124">124</a>) explore fakery, concealment, reputation or guarded information. The phrase “You Don’t Know Me” is especially direct: the narrator performs a public bad-boy image while invoking how he is seen and talked about. The motif is about controlling what others believe, not proof that every character shares one secret identity.</td></tr>
+<tr><td>“Desperate times” and pressure points</td><td>Social atmosphere</td><td>Named phrase plus wider thematic recurrence</td><td>“Desperate Times” (#<a href="discography.html#track-112">112</a>) explicitly names the condition and addresses the risks of crossing a line under pressure. Its concerns resonate with “Fear Of A Black Tenant” (#<a href="discography.html#track-032">032</a>), “Keep It Dark” (#<a href="discography.html#track-038">038</a>), “Injustice” (#<a href="discography.html#track-087">087</a>) and “Odds Are Stacked Against Me” (#<a href="discography.html#track-088">088</a>), which also describe constrained choices. The connection is thematic rather than an assertion that the tracks describe one event.</td></tr>
+<tr><td>Repetition, reprise and altered versions</td><td>Composition / sequencing</td><td>Exact returns and deliberate variations</td><td>“End Of The World” appears as “End Of The World (Not The)” (#<a href="discography.html#track-027">027</a>) and “End Of The World (U.S. Remix)” (#<a href="discography.html#track-037">037</a>); “Aroundaway” returns at #<a href="discography.html#track-073">073</a> with P.H.2 aka Infra-Red; “Know Tha Game” returns as a Sir Rizz mix (#<a href="discography.html#track-120">120</a>); and “C Da Real” returns as Part 2 (#<a href="discography.html#track-121">121</a>). These are observable structural echoes. The changed subtitle, performer or placement matters as much as the repeated phrase.</td></tr>
+<tr><td>Numbers, spelling codes and encoded speech</td><td>Language / numerical pattern</td><td>Embedded codes and stylised notation</td><td>“Tottenham” (#<a href="discography.html#track-018">018</a>) gives the postcode N15; “SABA And CKW” (#<a href="discography.html#track-006">006</a>) includes a spoken sequence of digits; “OCU4A3T YI8R12B” (#<a href="discography.html#track-023">023</a>) encodes a phrase through sound and number-like characters; “PX Reps” (#<a href="discography.html#track-083">083</a>) expands initials through dictionary-style wordplay. These examples establish a real interest in codes and notation, but any larger numerological claim needs its own track-by-track evidence.</td></tr>
+<tr><td>Future-facing Tottenham / the 2097 frame</td><td>Time / world-building</td><td>Late-stage setting and concluding structure</td><td>The final EP is titled “TOTTENHAM IN DA LON-TOWN 2097” and runs from “C Da Real Pt 2” (#<a href="discography.html#track-121">121</a>) through “You Don’t Know Me” (#<a href="discography.html#track-124">124</a>) to “Here To A Special No Thanks Then Part Ten” (#<a href="discography.html#track-125">125</a>). The future date extends the Tottenham/Lon-Town identity into speculative world-building; it should be treated as the concluding frame, not retroactively imposed on every earlier London song.</td></tr>
+<tr><td>Recurring characters versus recurring motifs</td><td>Canon discipline</td><td>Interpretive safeguard</td><td>A recurring phrase does not prove a recurring person, and a shared image does not prove group membership. Gemini is a person, not a Rizzio persona; early SABA & CKW material is not automatically Project X; and the Steven/Rizzio distinction remains important. Track order, lyrics, artwork and established assignments must support any stronger connection.</td></tr>
+</table>
+
+<p style="margin-top:28px;">
+Motifs are not just repeated words. They can be phrases, images, musical methods, narrative contrasts or structural devices. The strongest readings show what returns, where it returns, and what changes when it does. Chronology is evidence; interpretation remains accountable to the track.
+</div>
+<footer>
+    <h1 style="color:#4B0082; margin: 0 0 6px; font-size: 28px; letter-spacing: 0.06em;
+               text-shadow: 0 0 12px rgba(255,255,255,0.08);">
+        Rizzio<span class="tm-adjust">™</span>
+    </h1>
+
+    <p style="font-family: sans-serif; font-size: 14px; font-weight: 400;
+              color: #707070; letter-spacing: 0.2px; margin: 0;">
+        © 2025 — Catalogic Universe
+</p>
+</footer>
+</body>
+</html>

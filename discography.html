@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rizzio — Discography</title>
+
+<style>
+:root {
+    --bg: #050508;
+    --fg: #f5f5f5;
+    --accent: #e63946;
+    --muted: #999;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #151520 0, #050508 45%, #000 100%);
+    color: var(--fg);
+}
+
+header {
+    padding: 28px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(14px);
+    background: rgba(5,5,8,0.9);
+    z-index: 10;
+}
+
+nav a {
+    margin-right: 20px;
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+nav a:hover { opacity: 1; }
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+.title {
+    font-size: clamp(32px, 5vw, 48px);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.title span {
+    color: var(--accent);
+}
+
+.subtitle {
+    color: var(--muted);
+    margin-bottom: 40px;
+    font-size: 14px;
+}
+
+.section {
+    margin-bottom: 40px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 20px;
+}
+
+.section h2 {
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    padding: 4px 0;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    color: #ffffff !important;
+}
+
+li:hover {
+    color: #e63946 !important;
+}
+
+/* TRACK LINKS HOVER RED */
+li a:hover {
+    color: #e63946 !important;
+}
+
+li::before {
+    content: "• ";
+    color: var(--accent);
+}
+
+/* LINK FIX */
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #fff;
+}
+
+/* HIGHLIGHTED TEXT → RED */
+::selection {
+    background: #e63946;
+    color: #ffffff;
+}
+
+::-moz-selection {
+    background: #e63946;
+    color: #ffffff;
+}
+
+/* INDEX LAYOUT: preserve the original alphabetical index styling */
+.index-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 36px;
+    align-items: stretch;
+}
+.alphabetical-column, .chronological-column { min-width: 0; }
+.alphabetical-column > .section:last-child { margin-bottom: 0; }
+.chronological-column {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.chronological-column h2 {
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    margin: 0 0 10px;
+    color: var(--accent);
+}
+.chronological-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.chronological-list li {
+    padding: 0;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    line-height: 1.35;
+    color: #fff !important;
+    overflow-wrap: anywhere;
+}
+.chronological-list li::before { content: none; }
+.chronological-list .track-number {
+    display: inline-block;
+    width: 3.6em;
+    color: #FFFF00;
+    font-variant-numeric: tabular-nums;
+    scroll-margin-top: 110px;
+    text-decoration: none;
+}
+.chronological-list .track-number:focus,
+.chronological-list .track-number:active {
+    color: #999;
+}
+.chronological-list li > a:not(.track-number) {
+    color: inherit;
+    text-decoration: none;
+}
+@media (max-width: 760px) {
+    .index-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    .chronological-list { gap: 7px; }
+}
+
+</style>
+
+
+<style>
+/* Integrated animated emblem: discography */
+.disco-emblem{
+    width:96px;
+    height:96px;
+    display:block;
+}
+
+.disco-emblem .record{
+    transform-origin:40px 40px;
+    animation:spin 2.5s linear infinite;
+}
+
+.disco-emblem .tonearm{
+    transform-origin:72px 40px;
+    animation:tonearmMove 10s linear infinite;
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+/* Modified to end at 8 o'clock (60 degrees) instead of 9 o'clock (90 degrees) */
+@keyframes tonearmMove{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(60deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="index.html">Home</a>
+<a href="bio.html">Bio</a>
+<a href="discography.html">Discography</a>
+<a href="albums.html">Albums</a>
+<a href="personas.html">Personas</a>
+<a href="motifs.html">Motifs</a>
+<a href="numerology.html">Numerology</a>
+<a href="women.html">Women</a>
+<a href="manifesto.html">Manifesto</a>
+<a href="crew.html">Crew</a>
+<a href="themes.html">Themes & Geographical</a>
+
+</nav>
+</header>
+
+<div class="container">
+
+<div class="title">RIZZIO <span>SONG DISCOGRAPHY</span></div>
+<div class="subtitle">
+
+<svg width="96" height="96" viewBox="0 0 80 80"
+     role="img"
+     aria-label="Rizzio Discography Emblem"
+     class="disco-emblem">
+
+    <rect width="80" height="80" fill="#000"/>
+
+    <!-- Record -->
+    <g class="record">
+
+        <circle cx="40" cy="40" r="32"
+                fill="#111"
+                stroke="#222"
+                stroke-width="2"/>
+
+        <!-- Grooves updated to Metallic Gold (#d4af37) -->
+        <circle cx="40" cy="40" r="29"
+                fill="none"
+                stroke="#d4af37"
+                stroke-width="0.7"/>
+
+        <circle cx="40" cy="40" r="26"
+                fill="none"
+                stroke="#d4af37"
+                stroke-width="0.7"/>
+
+        <circle cx="40" cy="40" r="23"
+                fill="none"
+                stroke="#d4af37"
+                stroke-width="0.9"/>
+
+        <circle cx="40" cy="40" r="20"
+                fill="none"
+                stroke="#d4af37"
+                stroke-width="0.7"/>
+
+        <circle cx="40" cy="40" r="17"
+                fill="none"
+                stroke="#d4af37"
+                stroke-width="0.7"/>
+
+        <!-- Center Label updated to Metallic Gold (#d4af37) -->
+        <circle cx="40"
+                cy="40"
+                r="10"
+                fill="#d4af37"/>
+
+        <circle cx="40"
+                cy="40"
+                r="2"
+                fill="#000"/>
+
+    </g>
+
+    <!-- Tonearm -->
+    <g class="tonearm">
+
+        <!-- Pivot housing (Dark Walnut Brown) -->
+        <circle cx="72"
+                cy="40"
+                r="4"
+                fill="#251a14"
+                stroke="#3d2b1f"
+                stroke-width="1"/>
+
+        <!-- Pivot cap (Soft Almond Tan) -->
+        <circle cx="72"
+                cy="40"
+                r="2"
+                fill="#d2b48c"/>
+
+        <!-- Counterweight -->
+        <rect x="69"
+              y="34"
+              width="6"
+              height="3"
+              rx="1"
+              fill="#888"/>
+
+        <!-- Main arm (Deep Chestnut Wood Brown) -->
+        <line x1="72"
+              y1="40"
+              x2="72"
+              y2="58"
+              stroke="#5c4033"
+              stroke-width="2.8"
+              stroke-linecap="round"/>
+
+        <!-- Headshell (Warm Medium Timber Brown) -->
+        <line x1="72"
+              y1="58"
+              x2="72"
+              y2="62"
+              stroke="#8b5a2b"
+              stroke-width="2"
+              stroke-linecap="round"/>
+
+        <!-- Stylus -->
+        <line x1="72"
+              y1="62"
+              x2="71"
+              y2="64"
+              stroke="#d4af37"
+              stroke-width="1.2"/>
+
+        <!-- Needle tip -->
+        <circle cx="71"
+                cy="64"
+                r="0.9"
+                fill="#d4af37"/>
+
+    </g>
+
+</svg>
+
+Complete Alphanumerichronological index of the 125-track Foundation, Ascendancy and Mythos Eras catalogue</div>
+
+<div class="index-layout">
+<div class="alphabetical-column">
+
+<!-- 0–9 -->
+<div class="section">
+<h2>NUMERICAL INDEX</h2>
+<h2>0–9</h2>
+<ul>
+<li><a href="Album3.html">69</a></li>
+</ul>
+</div>
+
+<!-- A -->
+<div class="section">
+<h2>ALPHABETICAL INDEX</h2>
+<h2>A</h2>
+<ul>
+<li><a href="Album3.html">A Mind Is A Terrible Thing To Waste</a></li>
+<li><a href="Album1.html">Amplifier Fire</a></li>
+<li><a href="Album5.html">Aroundaway</a></li>
+<li><a href="Album5.html">Aroundaway (Featuring P.H.2 Aka Infra-Red)</a></li>
+<li><a href="Album6.html">Ashley’s Goin’ Church!</a></li>
+</ul>
+</div>
+
+<!-- B -->
+<div class="section">
+<h2>B</h2>
+<ul>
+<li><a href="Album8.html">Bad Lyrics</a></li>
+<li><a href="Album8.html">Bangin’</a></li>
+<li><a href="Album2.html">Bbrand Nnew Pplayer</a></li>
+<li><a href="Album4.html">Big Booty Bitches, Slutty Slags And Horny Hoes</a></li>
+<li><a href="Album7.html">Bring Your Dinner Too</a></li>
+</ul>
+</div>
+
+<!-- C -->
+<div class="section">
+<h2>C</h2>
+<ul>
+<li><a href="Album8.html">C Da Real</a></li>
+<li><a href="Album9.html">C Da Real Pt 2</a></li>
+<li><a href="Album1.html">California Flash</a></li>
+<li><a href="Album1.html">Can I Be A Good Boy?</a></li>
+<li><a href="Album5.html">Can't Stay Away</a></li>
+<li><a href="Album6.html">Cap’m’s Log</a></li>
+<li><a href="Album6.html">Cautious My Precious</a></li>
+<li><a href="Album1.html">Close To The Borderline</a></li>
+<li><a href="Album6.html">Comin’ 4 U</a></li>
+<li><a href="Album7.html">Confucius Says</a></li>
+<li><a href="Album5.html">Cummin’ Round Her Mountain</a></li>
+</ul>
+</div>
+
+<!-- D -->
+<div class="section">
+<h2>D</h2>
+<ul>
+<li><a href="Album5.html">Death To The Stupid Salesman</a></li>
+<li><a href="Album7.html">Defy The Laws Of Physics</a></li>
+<li><a href="Album8.html">Desperate Times</a></li>
+<li><a href="Album7.html">Dicey</a></li>
+<li><a href="Album5.html">Dirty Old Man In A Raincoat</a></li>
+<li><a href="Album1.html">Down The Boulevard</a></li>
+</ul>
+</div>
+
+<!-- E -->
+<div class="section">
+<h2>E</h2>
+<ul>
+<li><a href="Album2.html">End Of The World (Not The)</a></li>
+<li><a href="Album3.html">End Of The World (U.S. Remix)</a></li>
+<li><a href="Album7.html">Executive Seducer, The</a></li>
+</ul>
+</div>
+
+<!-- F -->
+<div class="section">
+<h2>F</h2>
+<ul>
+<li><a href="Album5.html">Favourite Word is F (Part 1)</a></li>
+<li><a href="Album3.html">Fear Of A Black Tenant</a></li>
+<li><a href="Album6.html">Fisherman’s Friend</a></li>
+<li><a href="Album4.html">Fiz Zong Haz Kno Tytal</a></li>
+<li><a href="Album2.html">Flyonchildren</a></li>
+<li><a href="Album1.html">Friends And Strangers</a></li>
+</ul>
+</div>
+
+<!-- G -->
+<div class="section">
+<h2>G</h2>
+<ul>
+<li><a href="Album8.html">Ghetto Street Stuff</a></li>
+<li><a href="Album2.html">Girl Called Sally</a></li>
+<li><a href="Album3.html">Girl Won’t Even Notice (She Smells Bad)</a></li>
+</ul>
+</div>
+
+<!-- H -->
+<div class="section">
+<h2>H</h2>
+<ul>
+<li><a href="Album1.html">Here To A Special No Thanks Son Part One</a></li>
+<li><a href="Album2.html">Here To A Special No Thank You Part Two</a></li>
+<li><a href="Album3.html">Here To A Special No Thank Me Part Three</a></li>
+<li><a href="Album4.html">Here To A Special No Thank Your Part Four</a></li>
+<li><a href="Album5.html">Here To A Special No Thank My Part Five</a></li>
+<li><a href="Album6.html">Here To A Special No Thank His Part Six</a></li>
+<li><a href="Album6.html">Here To A Special Thank Heavens Part Seven</a></li>
+<li><a href="Album7.html">Here To A Special No Thanks Mate Part Eight</a></li>
+<li><a href="Album7.html">Here To A Special No Thank Mine Part Nine</a></li>
+<li><a href="Album9.html">Here To A Special No Thanks Then Part Ten</a></li>
+<li><a href="Album5.html">Homiez All Knowz Me</a></li>
+<li><a href="Album7.html">House Of Lordz</a></li>
+</ul>
+</div>
+
+<!-- I -->
+<div class="section">
+<h2>I</h2>
+<ul>
+<li><a href="Album7.html">I Don't Make No Erm-Ology</a></li>
+<li><a href="Album7.html">I Will Never Never Surrender</a></li>
+<li><a href="Album4.html">I’ll Get Mine In Yo’ Home</a></li>
+<li><a href="Album2.html">In A Funny Way I Don’t Feel Sorry You’re Getting What You Served</a></li>
+<li><a href="Album9.html">In The Dead Of Night</a></li>
+<li><a href="Album6.html">Injustice</a></li>
+</ul>
+</div>
+
+<!-- J -->
+<div class="section">
+<h2>J</h2>
+<ul>
+<li><a href="Album4.html">Journey Through Da Lon-Town</a></li>
+</ul>
+</div>
+
+<!-- K -->
+<div class="section">
+<h2>K</h2>
+<ul>
+<li><a href="Album3.html">Keep It Dark</a></li>
+<li><a href="Album8.html">Know Tha Game</a></li>
+<li><a href="Album8.html">Know Tha Game (Sir Rizz Mixx)</a></li>
+</ul>
+</div>
+
+<!-- L -->
+<div class="section">
+<h2>L</h2>
+<ul>
+<li><a href="Album1.html">Legend Of My Record Collection (Wickedest Selection)</a></li>
+<li><a href="Album3.html">Like Those Lovely Girls Say</a></li>
+</ul>
+</div>
+
+<!-- M -->
+<div class="section">
+<h2>M</h2>
+<ul>
+<li><a href="Album6.html">Man Of The Match</a></li>
+<li><a href="Album2.html">May-Kit-Fun-Key</a></li>
+<li><a href="Album7.html">Metaphors 4 Betta Scores</a></li>
+<li><a href="Album1.html">Miss Understanding</a></li>
+<li><a href="Album3.html">Motorway Man</a></li>
+<li><a href="Album3.html">Music Of The World</a></li>
+<li><a href="Album3.html">My Misses</a></li>
+</ul>
+</div>
+
+<!-- N -->
+<div class="section">
+<h2>N</h2>
+<ul>
+<li><a href="Album2.html">Nasty Iz Nicety</a></li>
+<li><a href="Album6.html">Necessary Necessities</a></li>
+<li><a href="Album7.html">Night-Mare Animal Instincts</a></li>
+<li><a href="Album6.html">Nikki’s Nikkers</a></li>
+<li><a href="Album5.html">Nothing Has Changed</a></li>
+</ul>
+</div>
+
+<!-- O -->
+<div class="section">
+<h2>O</h2>
+<ul>
+<li><a href="Album2.html">OCU4A3T YI8R12B</a></li>
+<li><a href="Album6.html">Odds Are Stacked Against Me</a></li>
+<li><a href="Album2.html">On The Beach Lies A Boy</a></li>
+</ul>
+</div>
+
+<!-- P -->
+<div class="section">
+<h2>P</h2>
+<ul>
+<li><a href="Album1.html">P Flex</a></li>
+<li><a href="Album7.html">Pack Neva Stacks</a></li>
+<li><a href="Album4.html">Phone Call Yall</a></li>
+<li><a href="Album3.html">Placebo Pimp Hustlin’ Gangster</a></li>
+<li><a href="Album8.html">Playtime</a></li>
+<li><a href="Album4.html">Pointless Niggaz</a></li>
+<li><a href="Album7.html">Projex In FX Iz PX</a></li>
+<li><a href="Album5.html">Put On You Chocolate Stuff</a></li>
+<li><a href="Album6.html">PX Reps</a></li>
+</ul>
+</div>
+
+<!-- R -->
+<div class="section">
+<h2>R</h2>
+<ul>
+<li><a href="Album4.html">Rappin’ Will Get You Nowhere On The Dancefloor</a></li>
+<li><a href="Album7.html">Red Blue (Colour Me Funky)</a></li>
+<li><a href="Album6.html">Renegades (Featuring Project X starring Cynthia & Debbie)</a></li>
+<li><a href="Album1.html">Rizzio’s Rebirth</a></li>
+</ul>
+</div>
+
+<!-- S -->
+<div class="section">
+<h2>S</h2>
+<ul>
+<li><a href="Album1.html">SABA And CKW</a></li>
+<li><a href="Album7.html">Sho’ ’N’ ’Tel (Shona & Tallulah)</a></li>
+<li><a href="Album4.html">Sir Rizz</a></li>
+<li><a href="Album4.html">Six O’Clock</a></li>
+<li><a href="Album7.html">So You Wanna Be A Boxer?</a></li>
+<li><a href="Album1.html">Stiletto</a></li>
+<li><a href="Album3.html">SuperRizzio (Save The Day!)</a></li>
+</ul>
+</div>
+
+<!-- T -->
+<div class="section">
+<h2>T</h2>
+<ul>
+<li><a href="Album6.html">This Goes Out To The Lon-Town (Featuring Project X)</a></li>
+<li><a href="Album8.html">Tings And Stuff</a></li>
+<li><a href="Album2.html">Tottenham</a></li>
+<li><a href="Album5.html">Trajic Hour</a></li>
+<li><a href="Album1.html">Tribute To Eddie Hazel</a></li>
+</ul>
+</div>
+
+<!-- U -->
+<div class="section">
+<h2>U</h2>
+<ul>
+<li><a href="Album8.html">U Get Me</a></li>
+<li><a href="Album5.html">U No U Could B Good 2 U</a></li>
+<li><a href="Album2.html">Undercover Business</a></li>
+<li><a href="Album6.html">Untitled</a></li>
+</ul>
+</div>
+
+<!-- V -->
+<div class="section">
+<h2>V</h2>
+<ul>
+<li><a href="Album4.html">V Riddla</a></li>
+<li><a href="Album5.html">Vinyl Vs C.D.</a></li>
+<li><a href="Album5.html">Vitamin F (Part 2)</a></li>
+</ul>
+</div>
+
+<!-- W -->
+<div class="section">
+<h2>W</h2>
+<ul>
+<li><a href="Album6.html">Wanted</a></li>
+<li><a href="Album5.html">Wanton Streak</a></li>
+<li><a href="Album4.html">We’re Glad You’re Here</a></li>
+<li><a href="Album2.html">What A Difference A Day Makes</a></li>
+<li><a href="Album8.html">Who Da Baddest</a></li>
+</ul>
+</div>
+
+<!-- X -->
+<div class="section">
+<h2>X</h2>
+<ul>
+<li><a href="Album3.html">X-Rated</a></li>
+</ul>
+</div>
+
+<!-- Y -->
+<div class="section">
+<h2>Y</h2>
+<ul>
+<li><a href="Album4.html">Ya Know Tha Drill</a></li>
+<li><a href="Album9.html">You Don’t Know Me</a></li>
+<li><a href="Album2.html">You Scared Me Baby</a></li>
+<li><a href="Album8.html">You’re Goin’ Down You Slagg</a></li>
+<li><a href="Album9.html">You’re In The Army Now</a></li>
+</ul>
+</div>
+
+<!-- Z -->
+<div class="section">
+<h2>Z</h2>
+<ul>
+<li><a href="Album5.html">Zany Maniac</a></li>
+<li><a href="Album3.html">Zzzzzz (Interlude)</a></li>
+</ul>
+</div>
+<!-- Chronological index: album and track order from the album pages -->
+</div>
+<aside class="chronological-column">
+<h2>CHRONOLOGICAL INDEX</h2>
+<h2>###</h2>
+<ul class="chronological-list">
+<li><a class="track-number" id="track-001" href="Album1.html#track1">001</a> Close To The Borderline</li>
+<li><a class="track-number" id="track-002" href="Album1.html#track2">002</a> Amplifier Fire</li>
+<li><a class="track-number" id="track-003" href="Album1.html#track3">003</a> Friends And Strangers</li>
+<li><a class="track-number" id="track-004" href="Album1.html#track4">004</a> California Flash</li>
+<li><a class="track-number" id="track-005" href="Album1.html#track5">005</a> Rizzio's Rebirth</li>
+<li><a class="track-number" id="track-006" href="Album1.html#track6">006</a> SABA And CKW</li>
+<li><a class="track-number" id="track-007" href="Album1.html#track7">007</a> Stiletto</li>
+<li><a class="track-number" id="track-008" href="Album1.html#track8">008</a> Miss Understanding</li>
+<li><a class="track-number" id="track-009" href="Album1.html#track9">009</a> Can I Be A Good Boy?</li>
+<li><a class="track-number" id="track-010" href="Album1.html#track10">010</a> Down The Boulevard</li>
+<li><a class="track-number" id="track-011" href="Album1.html#track11">011</a> Legend Of My Record Collection (Wickedest Selection)</li>
+<li><a class="track-number" id="track-012" href="Album1.html#track12">012</a> Tribute To Eddie Hazel</li>
+<li><a class="track-number" id="track-013" href="Album1.html#track13">013</a> P Flex</li>
+<li><a class="track-number" id="track-014" href="Album1.html#track14">014</a> Here To A Special No Thanks Son Part One</li>
+<li><a class="track-number" id="track-015" href="Album2.html#track1">015</a> Girl Called Sally</li>
+<li><a class="track-number" id="track-016" href="Album2.html#track2">016</a> May-Kit-Fun-Key</li>
+<li><a class="track-number" id="track-017" href="Album2.html#track3">017</a> Nasty Iz Nicety</li>
+<li><a class="track-number" id="track-018" href="Album2.html#track4">018</a> Tottenham</li>
+<li><a class="track-number" id="track-019" href="Album2.html#track5">019</a> What A Difference A Day Makes</li>
+<li><a class="track-number" id="track-020" href="Album2.html#track6">020</a> Undercover Business</li>
+<li><a class="track-number" id="track-021" href="Album2.html#track7">021</a> Flyonchildren</li>
+<li><a class="track-number" id="track-022" href="Album2.html#track8">022</a> On The Beach Lies A Boy</li>
+<li><a class="track-number" id="track-023" href="Album2.html#track9">023</a> OCU4A3T YI8R12B</li>
+<li><a class="track-number" id="track-024" href="Album2.html#track10">024</a> You Scared Me Baby</li>
+<li><a class="track-number" id="track-025" href="Album2.html#track11">025</a> In A Funny Way I Don't Feel Sorry You're Getting What You Served</li>
+<li><a class="track-number" id="track-026" href="Album2.html#track12">026</a> Bbrand Nnew Pplayer</li>
+<li><a class="track-number" id="track-027" href="Album2.html#track13">027</a> End Of The World (Not The)</li>
+<li><a class="track-number" id="track-028" href="Album2.html#track14">028</a> Here To A Special No Thank You Part Two</li>
+<li><a class="track-number" id="track-029" href="Album3.html#track1">029</a> Music Of The World</li>
+<li><a class="track-number" id="track-030" href="Album3.html#track2">030</a> A Mind Is A Terrible Thing To Waste</li>
+<li><a class="track-number" id="track-031" href="Album3.html#track3">031</a> 69</li>
+<li><a class="track-number" id="track-032" href="Album3.html#track4">032</a> Fear Of A Black Tenant</li>
+<li><a class="track-number" id="track-033" href="Album3.html#track5">033</a> Girl Won't Even Notice (She Smells Bad)</li>
+<li><a class="track-number" id="track-034" href="Album3.html#track6">034</a> Zzzzzz (Interlude)</li>
+<li><a class="track-number" id="track-035" href="Album3.html#track7">035</a> SuperRizzio (Save The Day!)</li>
+<li><a class="track-number" id="track-036" href="Album3.html#track8">036</a> Motorway Man</li>
+<li><a class="track-number" id="track-037" href="Album3.html#track9">037</a> End Of The World (U.S. Remix)</li>
+<li><a class="track-number" id="track-038" href="Album3.html#track10">038</a> Keep It Dark</li>
+<li><a class="track-number" id="track-039" href="Album3.html#track11">039</a> Placebo Pimp Hustlin' Gangster</li>
+<li><a class="track-number" id="track-040" href="Album3.html#track12">040</a> My Misses</li>
+<li><a class="track-number" id="track-041" href="Album3.html#track13">041</a> X-Rated</li>
+<li><a class="track-number" id="track-042" href="Album3.html#track14">042</a> Like Those Lovely Girls Say</li>
+<li><a class="track-number" id="track-043" href="Album3.html#track15">043</a> Here To A Special No Thank Me Part Three</li>
+<li><a class="track-number" id="track-044" href="Album4.html#track1">044</a> Big Booty Bitches, Slutty Slags And Horny Hoes</li>
+<li><a class="track-number" id="track-045" href="Album4.html#track2">045</a> I'll Get Mine In Yo' Home</li>
+<li><a class="track-number" id="track-046" href="Album4.html#track3">046</a> We're Glad You're Here</li>
+<li><a class="track-number" id="track-047" href="Album4.html#track4">047</a> Rappin' Will Get You Nowhere On The Dancefloor</li>
+<li><a class="track-number" id="track-048" href="Album4.html#track5">048</a> Journey Through Da Lon-Town</li>
+<li><a class="track-number" id="track-049" href="Album4.html#track6">049</a> Phone Call Yall</li>
+<li><a class="track-number" id="track-050" href="Album4.html#track7">050</a> Queue Up All Y'all Pre-Funkadelics Peoples</li>
+<li><a class="track-number" id="track-051" href="Album4.html#track8">051</a> Six O'Clock</li>
+<li><a class="track-number" id="track-052" href="Album4.html#track9">052</a> Fiz Zong Haz Kno Tytal</li>
+<li><a class="track-number" id="track-053" href="Album4.html#track10">053</a> Pointless Niggaz</li>
+<li><a class="track-number" id="track-054" href="Album4.html#track11">054</a> Ya Know Tha Drill</li>
+<li><a class="track-number" id="track-055" href="Album4.html#track12">055</a> V Riddla</li>
+<li><a class="track-number" id="track-056" href="Album4.html#track13">056</a> Sir Rizz</li>
+<li><a class="track-number" id="track-057" href="Album4.html#track14">057</a> Here To A Special No Thank Your Part Four</li>
+<li><a class="track-number" id="track-058" href="Album5.html#track1">058</a> Can't Stay Away</li>
+<li><a class="track-number" id="track-059" href="Album5.html#track2">059</a> Wanton Streak</li>
+<li><a class="track-number" id="track-060" href="Album5.html#track3">060</a> Cummin' Round Her Mountain</li>
+<li><a class="track-number" id="track-061" href="Album5.html#track4">061</a> Zany Maniac</li>
+<li><a class="track-number" id="track-062" href="Album5.html#track5">062</a> Dirty Old Man In A Raincoat</li>
+<li><a class="track-number" id="track-063" href="Album5.html#track6">063</a> Favourite Word Is F (Part 1)</li>
+<li><a class="track-number" id="track-064" href="Album5.html#track7">064</a> Vitamin F (Part 2)</li>
+<li><a class="track-number" id="track-065" href="Album5.html#track8">065</a> U No U Could B Good 2 U</li>
+<li><a class="track-number" id="track-066" href="Album5.html#track9">066</a> Vinyl Vs C.D</li>
+<li><a class="track-number" id="track-067" href="Album5.html#track10">067</a> Homiez All Knowz Me</li>
+<li><a class="track-number" id="track-068" href="Album5.html#track11">068</a> Aroundaway</li>
+<li><a class="track-number" id="track-069" href="Album5.html#track12">069</a> Death To The Stupid Salesman</li>
+<li><a class="track-number" id="track-070" href="Album5.html#track13">070</a> Put On You Chocolate Stuff</li>
+<li><a class="track-number" id="track-071" href="Album5.html#track14">071</a> Trajic Hour</li>
+<li><a class="track-number" id="track-072" href="Album5.html#track15">072</a> Nothing Has Changed</li>
+<li><a class="track-number" id="track-073" href="Album5.html#track16">073</a> Aroundaway (Featuring P.H.2 Aka Infra-Red)</li>
+<li><a class="track-number" id="track-074" href="Album5.html#track17">074</a> Here To A Special No Thank My Part Five</li>
+<li><a class="track-number" id="track-075" href="Album6.html#track1">075</a> Here To A Special No Thank His Part Six</li>
+<li><a class="track-number" id="track-076" href="Album6.html#track2">076</a> Renegades (Featuring Project X starring Cynthia &amp; Debbie)</li>
+<li><a class="track-number" id="track-077" href="Album6.html#track3">077</a> This Goes Out To The Lon-Town (Featuring Project X)</li>
+<li><a class="track-number" id="track-078" href="Album6.html#track4">078</a> Ashley's Goin' Church!</li>
+<li><a class="track-number" id="track-079" href="Album6.html#track5">079</a> Cap'm's Log</li>
+<li><a class="track-number" id="track-080" href="Album6.html#track6">080</a> Nikki's Nikkers</li>
+<li><a class="track-number" id="track-081" href="Album6.html#track7">081</a> Comin' 4 U</li>
+<li><a class="track-number" id="track-082" href="Album6.html#track8">082</a> Wanted</li>
+<li><a class="track-number" id="track-083" href="Album6.html#track9">083</a> PX Reps</li>
+<li><a class="track-number" id="track-084" href="Album6.html#track10">084</a> Cautious My Precious</li>
+<li><a class="track-number" id="track-085" href="Album6.html#track11">085</a> Fisherman's Friend</li>
+<li><a class="track-number" id="track-086" href="Album6.html#track12">086</a> Necessary Necessities</li>
+<li><a class="track-number" id="track-087" href="Album6.html#track13">087</a> Injustice</li>
+<li><a class="track-number" id="track-088" href="Album6.html#track14">088</a> Odds Are Stacked Against Me</li>
+<li><a class="track-number" id="track-089" href="Album6.html#track15">089</a> Man Of The Match</li>
+<li><a class="track-number" id="track-090" href="Album6.html#track16">090</a> Untitled</li>
+<li><a class="track-number" id="track-091" href="Album6.html#track17">091</a> Here To A Special Thank Heavens Part Seven</li>
+<li><a class="track-number" id="track-092" href="Album7.html#track1">092</a> Here To A Special No Thanks Mate Part Eight</li>
+<li><a class="track-number" id="track-093" href="Album7.html#track2">093</a> So You Wanna Be A Boxer?</li>
+<li><a class="track-number" id="track-094" href="Album7.html#track3">094</a> Night-Mare Animal Instincts</li>
+<li><a class="track-number" id="track-095" href="Album7.html#track4">095</a> House Of Lordz</li>
+<li><a class="track-number" id="track-096" href="Album7.html#track5">096</a> Metaphors 4 Betta Scores</li>
+<li><a class="track-number" id="track-097" href="Album7.html#track6">097</a> Defy The Laws Of Physics</li>
+<li><a class="track-number" id="track-098" href="Album7.html#track7">098</a> I Will Never Never Surrender</li>
+<li><a class="track-number" id="track-099" href="Album7.html#track8">099</a> Red Blue (Colour Me Funky)</li>
+<li><a class="track-number" id="track-100" href="Album7.html#track9">100</a> Dicey</li>
+<li><a class="track-number" id="track-101" href="Album7.html#track10">101</a> Projex In FX Iz PX</li>
+<li><a class="track-number" id="track-102" href="Album7.html#track11">102</a> Pack Neva Stacks</li>
+<li><a class="track-number" id="track-103" href="Album7.html#track12">103</a> Sho' 'N' 'Tel (Shona &amp; Tallulah)</li>
+<li><a class="track-number" id="track-104" href="Album7.html#track13">104</a> Confucius Says</li>
+<li><a class="track-number" id="track-105" href="Album7.html#track14">105</a> I Don't Make No Erm-Ology</li>
+<li><a class="track-number" id="track-106" href="Album7.html#track15">106</a> Bring Your Dinner Too</li>
+<li><a class="track-number" id="track-107" href="Album7.html#track16">107</a> The Executive Seducer</li>
+<li><a class="track-number" id="track-108" href="Album7.html#track17">108</a> Here To A Special No Thank Mine Part Nine</li>
+<li><a class="track-number" id="track-109" href="Album8.html#track1">109</a> Bad Lyrics</li>
+<li><a class="track-number" id="track-110" href="Album8.html#track2">110</a> Tings And Stuff</li>
+<li><a class="track-number" id="track-111" href="Album8.html#track3">111</a> Ghetto Street Stuff</li>
+<li><a class="track-number" id="track-112" href="Album8.html#track4">112</a> Desperate Times</li>
+<li><a class="track-number" id="track-113" href="Album8.html#track5">113</a> Know Tha Game</li>
+<li><a class="track-number" id="track-114" href="Album8.html#track6">114</a> C Da Real</li>
+<li><a class="track-number" id="track-115" href="Album8.html#track7">115</a> Playtime</li>
+<li><a class="track-number" id="track-116" href="Album8.html#track8">116</a> U Get Me</li>
+<li><a class="track-number" id="track-117" href="Album8.html#track9">117</a> Bangin'</li>
+<li><a class="track-number" id="track-118" href="Album8.html#track10">118</a> You're Goin' Down You Slagg</li>
+<li><a class="track-number" id="track-119" href="Album8.html#track11">119</a> Who Da Baddest</li>
+<li><a class="track-number" id="track-120" href="Album8.html#track12">120</a> Know Tha Game (Sir Rizz Mixx)</li>
+<li><a class="track-number" id="track-121" href="Album9.html#track1">121</a> C Da Real Pt 2</li>
+<li><a class="track-number" id="track-122" href="Album9.html#track2">122</a> You're In The Army Now</li>
+<li><a class="track-number" id="track-123" href="Album9.html#track3">123</a> In The Dead Of Night</li>
+<li><a class="track-number" id="track-124" href="Album9.html#track4">124</a> You Don't Know Me</li>
+<li><a class="track-number" id="track-125" href="Album9.html#track5">125</a> Here To A Special No Thanks Then Part Ten</li>
+</ul>
+</aside>
+</div>
+</div>
+<!-- DYNAMIC FAVICON INJECTION SCRIPT -->
+<script>
+    (function() {
+        var link = document.createElement('link');
+        link.rel = 'icon';
+        link.type = 'image/jpeg';
+        link.href = './images/discography-icon.jpg';
+        document.head.appendChild(link);
+    })();
+</script>
+<footer>
+    <div class="container" style="text-align: right;">
+        <h1 style="color:#FFFF00; margin: 0 0 6px; font-size: 28px; letter-spacing: 0.06em;
+                   text-shadow: 0 0 12px rgba(255,255,255,0.08);">
+            Rizzio<span class="tm-adjust">™</span>
+        </h1>
+
+        <p style="font-family: sans-serif; font-size: 14px; font-weight: 400;
+                  color: #707070; letter-spacing: 0.2px; margin: 0;">
+            © 2025 — Catalogic Universe
+       </div>
+    </p>
+</footer>
+</body>
+</html>
