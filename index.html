@@ -220,7 +220,7 @@
             grid-template-columns: repeat(4, max-content);
             justify-content: center;
             justify-items: center;
-            column-gap: 3em;
+            column-gap: 2em;
             row-gap: 0;
             width: 100%;
             margin: -22px auto 12px;
@@ -242,7 +242,59 @@
         .anthology-names + .anthology-title {
             margin-top: 0;
         }
-    </style>
+    @media (max-width: 700px) {
+
+    /* Square video display on mobile */
+    .footer-banner-img {
+        width: min(100%, 420px);
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+    }
+
+    /* Two-column name layout on mobile */
+    .anthology-names {
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center;
+        column-gap: 1.25em;
+        font-size: clamp(14px, 4.2vw, 24px);
+        white-space: nowrap;
+    }
+
+    .anthology-names span:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .anthology-names span:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .anthology-names span:nth-child(3) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .anthology-names span:nth-child(4) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .anthology-names span:nth-child(5),
+    .anthology-names span:nth-child(6) {
+        display: none;
+    }
+
+    .anthology-names span:nth-child(7) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .anthology-names span:nth-child(8) {
+        grid-column: 2;
+        grid-row: 3;
+    }
+}</style>
 </head>
 
 <body>
