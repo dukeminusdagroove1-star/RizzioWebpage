@@ -176,11 +176,14 @@
         }
 
         .footer-banner-img {
-            width: 1040px;
-            height: 507px;
+            width: min(1040px, 100%);
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: contain;
             border-radius: 12px;
             display: block;
             margin: 0 auto 16px;
+            background: #000;
         }
 
         .footer-banner-text {
@@ -201,7 +204,7 @@
             display: block;
         }
 
-        .anthology-title {
+                       .anthology-title {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
             font-size: 31px;
@@ -210,6 +213,34 @@
             text-align: center;
             margin-top: -22px;
             line-height: 1.1;
+        }
+
+        .anthology-names {
+            display: grid;
+            grid-template-columns: repeat(4, max-content);
+            justify-content: center;
+            justify-items: center;
+            column-gap: 3em;
+            row-gap: 0;
+            width: 100%;
+            margin: -22px auto 12px;
+            line-height: 1.1;
+            white-space: nowrap;
+        }
+
+        .footer-banner-text {
+            max-width: 520px;
+            margin: 0 auto;
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            text-align: center;
+        }
+
+        .anthology-names + .anthology-title {
+            margin-top: 0;
         }
     </style>
 </head>
@@ -324,13 +355,33 @@
 
         <div class="footer-banner">
 
-    <img src="images/rizzio-metamorphosis.png"
-         alt="Rizzio’s four-stage metamorphosis: Rizzio, Sir Rizz, Dirty Old Man and the Proj-Executive Seducer"
-         class="footer-banner-img">
+    <video class="footer-banner-img"
+           autoplay
+           muted
+           loop
+           playsinline
+           controls
+           preload="metadata"
+           aria-label="Rizzio’s four-stage metamorphosis: Rizzio, Sir Rizz, Dirty Old Man and the Proj-Executive Seducer">
+        <source src="rizzio-metamorphosis.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
 
     <div style="height:40px;"></div>
 
-            <div class="anthology-title">ANTHOLOGY</div>
+                        <div class="anthology-title anthology-names">
+    <span>RIZZIO</span>
+    <span>SIR RIZZ</span>
+    <span>DIRTY OLD</span>
+    <span>EXECUTIVE</span>
+
+    <span></span>
+    <span></span>
+    <span>MAN</span>
+    <span>SEDUCER</span>
+</div>
+</div>
+<div class="anthology-title">ANTHOLOGY</div>
 
             <p class="footer-banner-text">
 
@@ -338,10 +389,10 @@
             </p>
 </div>
 <footer>
-    <h1 style="color:#FF0000; margin: 0 0 6px; font-size: 28px; letter-spacing: 0.06em;
-               text-shadow: 0 0 12px rgba(255,255,255,0.08);">
-        Rizzio<span class="tm-adjust">™</span>
-    </h1>
+    <h1 style="font-family: 'Orbitron', sans-serif; color:#FF0000; margin: 0 0 6px; font-size: 28px; letter-spacing: 0.06em;
+           text-shadow: 0 0 12px rgba(255,255,255,0.08);">
+    Rizzio<span class="tm-adjust" style="font-family: 'Orbitron', sans-serif;">™</span>
+</h1>
 
     <p style="font-family: sans-serif; font-size: 14px; font-weight: 400;
               color: #707070; letter-spacing: 0.2px; margin: 0;">
