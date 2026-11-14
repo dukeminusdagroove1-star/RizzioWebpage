@@ -631,6 +631,11 @@ This is an archive-led account. Dates are given as precisely as the available ma
         © 2025 — Catalogic Universe
     </p>
 </footer>
-
+<script>
+document.querySelectorAll('audio').forEach(audio => {
+    audio.setAttribute('controlsList', 'nodownload');
+    audio.setAttribute('oncontextmenu', 'return false;');
+});
+</script>
 </body>
 </html>
