@@ -94,16 +94,27 @@
         }
 
         .projectx-hero-logo {
-            display: block;
-            width: 400px;
-            height: auto;
-            max-width: 100%;
-            margin: 0 0 18px auto;
-            object-fit: contain;
-            border: 0;
-            border-radius: 0;
-            background: transparent;
-        }
+    display: block;
+    width: 400px;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto 18px auto; /* Centers the image horizontally */
+    object-fit: contain;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    filter: contrast(250%) brightness(85%);
+    mix-blend-mode: screen;
+}
+
+.intro-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers flex items instead of pushing them right */
+    padding-top: 8px;
+}
+
 
         .intro-layout {
             display: grid;
@@ -204,12 +215,34 @@
             align-items: start;
         }
 
-        .logo-row { align-items: center; }
-        .logo-row figure img { max-height: 220px; padding: 12px; }
-        .image-row figure, .logo-row figure { margin: 12px 0; }
-        .image-row img, .logo-row img { width: 100%; }
+        .logo-row {
+    display: grid;
+    /* Gives the first logo (Proj(ect)-X) a wider column so it renders larger side by side */
+    grid-template-columns: 0.8fr 1fr;
+    gap: 24px;
+    align-items: center;
+}
 
-        blockquote {
+.logo-row figure {
+    margin: 12px 0;
+}
+
+.logo-row figure img {
+    width: 100%;
+    max-height: 320px;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+}
+
+/* Paste this right underneath */
+.logo-row img[alt="Proj(ect)-X Pic Logo"] {
+    transform: scale(1.25);
+    transform-origin: top center; /* Grows downward only, never upward into the audio bar */
+    margin-bottom: 92px; /* Extra bottom room since all 15% growth now goes downward */
+}
+       blockquote {
             margin: 22px 0;
             padding: 16px 20px;
             border-left: 3px solid var(--accent);
@@ -392,7 +425,8 @@ For clarity, (and for anyone who cares or is bothered!!) I was known professiona
 </p>
             </div>
             <div class="intro-side">
-                <img class="projectx-hero-logo" src="images/Antique Gold X Hip-Hop Logo.png" alt="Antique Gold X Hip-Hop Logo" width="150">
+    <img class="projectx-gold-logo" src="images/Antique Gold X Hip-Hop Logo.png" alt="Antique Gold X Hip-Hop Logo" width="260">
+</div>
             </div>
         </div>
     </div>
@@ -601,7 +635,8 @@ The group had progressed from the independent promotional activity of 1995 into 
 The project was also becoming increasingly connected to the wider creative work I was developing as Rizzio.
 <br>
 <br>
-<figure><img src="images/Proj(ect)-X Text Logo1.png" alt="Proj(ect)-X Text Logo"></figure>
+<figure><img src="images/Proj(ect)-X Text Logo1.png" alt="Proj(ect)-X Text Logo" class="projectx-hero-logo">
+</figure>
     <section id="1997">
         <div class="section-label">MARCH 1997</div>
         <h2>The Americans Set The Foundation</h2>
