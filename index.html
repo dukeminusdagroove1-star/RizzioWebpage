@@ -173,22 +173,25 @@ nav a:hover { opacity: 1; }
         }
 
         .footer-banner {
-            margin-top: 80px;
-            padding: 40px 24px;
+    margin-top: 80px;
+    padding: 10px 24px 40px;
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.06);
         }
 
         .footer-banner-img {
-            width: min(1040px, 100%);
-            height: auto;
-            aspect-ratio: 16 / 9;
-            object-fit: contain;
-            border-radius: 12px;
-            display: block;
-            margin: 0 auto 16px;
-            background: #000;
-        }
+    width: min(1140px, calc(100vw - 48px));
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto 16px;
+    background: #000;
+}
 
         .footer-banner-text {
             max-width: 520px;
@@ -413,19 +416,11 @@ nav a:hover { opacity: 1; }
 
         <div class="footer-banner">
 
-    <video class="footer-banner-img"
-           autoplay
-           muted
-           loop
-           playsinline
-           controls
-           preload="metadata"
-           aria-label="Rizzio’s four-stage metamorphosis: Rizzio, Sir Rizz, Dirty Old Man and the Proj-Executive Seducer">
-        <source src="rizzio-metamorphosis.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video>
+    <img class="footer-banner-img"
+         src="images/rizzio-metamorphosis.png"
+         alt="Rizzio’s four-stage metamorphosis: Rizzio, Sir Rizz, Dirty Old Man and the Proj-Executive Seducer">
 
-    <div style="height:40px;"></div>
+    <div style="height:01px;"></div>
 
                         <div class="anthology-title anthology-names">
     <span>RIZZIO</span>
@@ -437,6 +432,8 @@ nav a:hover { opacity: 1; }
     <span></span>
     <span>MAN</span>
     <span>SEDUCER</span>
+</div>
+</div>
 </div>
 </div>
 <div class="anthology-title">ANTHOLOGY</div>
