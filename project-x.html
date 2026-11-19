@@ -380,11 +380,51 @@
             margin-bottom: 8px;
         }
 
+
+        .hero-media {
+            position: relative;
+            flex: 0 0 auto;
+            max-width: 260px;
+        }
+
+        .hero-image {
+            width: 260px;
+            height: 290px;
+            border-radius: 8px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .sound-toggle {
+            position: absolute;
+            left: 8px;
+            bottom: 4px;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 999px;
+            padding: 7px 11px;
+            color: #fff;
+            background: rgba(0,0,0,0.78);
+            font: inherit;
+            font-size: 12px;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            backdrop-filter: blur(6px);
+        }
+
+        .sound-toggle:hover,
+        .sound-toggle:focus-visible {
+            background: rgba(230,57,70,0.95);
+            outline: 2px solid rgba(255,255,255,0.85);
+            outline-offset: 2px;
+        }
+
         @media (max-width: 700px) {
             main { padding: 28px 24px 60px; }
             .intro-layout { grid-template-columns: 1fr; gap: 22px; }
             .intro-side { align-items: flex-start; padding-top: 0; }
             .projectx-hero-logo { margin: 0 0 14px; }
+            .hero-media { max-width: 100%; width: 100%; }
+            .hero-image { max-width: 100%; width: 100%; }
             .image-row, .logo-row, .audio-list { grid-template-columns: 1fr; }
             .tracklist { columns: 1; }
             section { margin-top: 40px; padding-top: 32px; }
@@ -426,7 +466,13 @@ For clarity, (and for anyone who cares or is bothered!!) I was known professiona
 </p>
             </div>
             <div class="intro-side">
-    <img class="projectx-gold-logo" src="images/Antique Gold X Hip-Hop Logo.png" alt="Antique Gold X Hip-Hop Logo" width="260">
+    <div class="hero-media">
+        <video id="rizzio-banner-video" class="hero-image" autoplay muted loop playsinline preload="metadata" <video id="rizzio-banner-video" class="hero-image" autoplay muted loop playsinline preload="metadata" aria-label="Rizzio animated banner"> aria-label="Rizzio animated banner">
+            <source src="Straight From The Fucking Lon-Town.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+        </video>
+        <button id="rizzio-sound-toggle" class="sound-toggle" type="button" aria-controls="rizzio-banner-video" aria-pressed="false" aria-label="Turn video sound on">♪ Sound Off</button>
+    </div>
 </div>
             </div>
         </div>
@@ -543,7 +589,7 @@ It presents this as a self-driven operation: Proj(ect)-X was not waiting for the
 </div>
 </p>
         <div class="section-label">8th NOVEMBER 1995</div>
-        <h2>Bristol Galaxy FM</h2>
+        <h2>Bristol - Galaxy 101 FM</h2>
         <h3>The next appearance was discussed on Kiss FM a week earlier.</h3>
         <p>The Kiss FM transcript points forward to Bristol: Yinka tells the presenters that Proj(ect)-X should be there the following Wednesday for a Galaxy FM session, followed by a club PA. The press release subsequently confirms the Bristol Galaxy FM appearance on the 8th November — one week after the Kiss FM broadcast.</p>
         <p>This interview featured Yinka, Stone, Rizzio, Infra-red, Juliet and DJ Def K and a freestyle from Yinka, Stone and Rizzio. The Hostess, DJ Miranda Rae of Galaxy 101 FM was taken a-back by the charm and sophistication of Sir Rizz, on "The Breakdown" Rap Show!</p>
@@ -721,6 +767,35 @@ This archive preserves that journey through the surviving press releases, interv
         © 2025 — Catalogic Universe
     </p>
 </footer>
+<script>
+(() => {
+    const video = document.getElementById('rizzio-banner-video');
+    const toggle = document.getElementById('rizzio-sound-toggle');
+    if (!video || !toggle) return;
+
+    const updateSoundControl = () => {
+        const soundOn = !video.muted;
+        toggle.textContent = soundOn ? '♪ Sound On' : '♪ Sound Off';
+        toggle.setAttribute('aria-pressed', String(soundOn));
+        toggle.setAttribute('aria-label', soundOn ? 'Turn video sound off' : 'Turn video sound on');
+    };
+
+    toggle.addEventListener('click', async () => {
+        video.muted = !video.muted;
+        if (!video.muted) {
+            try {
+                await video.play();
+            } catch (error) {
+                // The browser may require another playback gesture; the toggle remains available.
+            }
+        }
+        updateSoundControl();
+    });
+
+    video.addEventListener('volumechange', updateSoundControl);
+    updateSoundControl();
+})();
+</script>
 <script>
 document.querySelectorAll('audio').forEach(audio => {
     audio.setAttribute('controlsList', 'nodownload');
